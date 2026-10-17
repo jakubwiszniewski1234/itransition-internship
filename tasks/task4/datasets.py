@@ -2,8 +2,7 @@ import pandas as pd
 from typing import Literal
 import yaml
 
-DATA_FOLDER = "./data/STORE1/"
-
+DIRECTORIES = Literal["./data/STORE1/", "./data/STORE2/", "./data/STORE3/", "./data/STORE4/", "./data/STORE5/"]
 FILES = Literal["books.yaml", "orders.parquet", "users.csv"]
 def read_csv(path: str):
     return pd.read_csv(path, sep=",")
@@ -18,7 +17,7 @@ def read_yaml(path: str):
     loaded_par = [{key[1:]: value for key, value in item.items()} for item in loaded]
     return pd.DataFrame(loaded_par)
 
-def loadDataset(fileName: FILES, directory: str = DATA_FOLDER) -> pd.DataFrame:
+def loadDataset(fileName: FILES, directory: DIRECTORIES = "./data/STORE1/") -> pd.DataFrame:
     datasetPath = directory + fileName
     fileType = fileName.split(".")[-1]
     read = {
