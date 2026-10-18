@@ -1,20 +1,9 @@
 import pandas as pd
 import datasets as DS
 
-books = DS.loadDataset("books.yaml")
-orders = DS.loadDataset("orders.parquet")
-users = DS.loadDataset("users.csv")
+DIR = "cleaned_data/STORE1/"
 
-# prepare data
-# print(books.dtypes)
-# id            int64
-# title           str
-# author          str
-# genre           str
-# publisher       str
-# year         object
+books = DS.loadDataset("books.csv", DIR)
+orders = DS.loadDataset("orders.csv", DIR)
+users = DS.loadDataset("users.csv", DIR)
 
-books = books.drop_duplicates()
-books["year"] = books["year"]
-books["year"] = books["year"].astype("Int16")
-print(books["year"].isna().sum())
