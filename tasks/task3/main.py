@@ -10,19 +10,13 @@ def find_lowest_common_multiple(x, y):
     try:
         str_x = str(x).strip()
         str_y = str(y).strip()
-        
-        # Sprawdzamy czy stringi zawierają wyłącznie cyfry (odrzuca floaty z kropką, literki, minusy itp.)
         if not str_x.isdigit() or not str_y.isdigit():
             return "NaN"
             
         ix = int(str_x)
         iy = int(str_y)
-        
-        # Liczby naturalne / non-negative (0 też jest akceptowane)
         if ix < 0 or iy < 0:
             return "NaN"
-            
-        # math.lcm w Pythonie radzi sobie z liczbami o dowolnej wielkości bez ograniczeń rozmiaru!
         return math.lcm(ix, iy)
         
     except (TypeError, ValueError, OverflowError):
