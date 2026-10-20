@@ -1,12 +1,12 @@
 id,title,author,genre,publisher,year
 23099,Lawrence of Arabia,Amb. September Walter,Western,Matthias Media,1989
 22627,Into the Wild,Golda Satterfield,Textbook,Charles Scribner's Sons,2007
-22817,Jurassic Park,"Miss Lorina Kertzmann, Darron Ernser",Biography/Autobiography,HarperTrophy,1953
+22817,Jurassic Park,"Darron Ernser, Miss Lorina Kertzmann",Biography/Autobiography,HarperTrophy,1953
 22730,Minecraft,Nathan Hintz,Narrative nonfiction,Hamish Hamilton,2001
 22682,Dance Dance Dance,Natalie Schuster,Biography/Autobiography,G-Unit Books,1981
 22603,Interstellar,Mr. Shirley Tromp,Tall tale,Black Dog Publishing,2002
 23129,Frequent Hearses,Msgr. Kris Satterfield,Fantasy,City Lights Publishers,1989
-22527,Infinite Jest,"Willie Klocko, Frida Casper, Ms. Romeo Tremblay",Fairy tale,HarperTrophy,2023
+22527,Infinite Jest,"Frida Casper, Ms. Romeo Tremblay, Willie Klocko",Fairy tale,HarperTrophy,2023
 22568,The Grapes of Wrath,"Emerson Lakin, Fr. Latoyia Orn",Short story,New Holland Publishers,2011
 22922,In a Dry Season,"Ms. Shanice Feeney, Stephnie Feest",Mythopoeia,Athabasca University Press,1976
 22949,O Jerusalem!,Amada Gutmann,Short story,Penguin Books,2015
@@ -26,7 +26,7 @@ id,title,author,genre,publisher,year
 22913,Dangerous,Delma White,Mythology,Da Capo Press,1988
 22846,Diablo,"Gov. Porfirio Ebert, Loralee Yundt",Folklore,Kodansha,1995
 22770,Call of Duty: Black Ops III,Christina Armstrong,Realistic fiction,Etruscan Press,2012
-22495,PokĂ©mon Blue,"Shea Jacobs DDS, Prof. Nicolas Kuhic, Curt Heidenreich VM",Western,Haynes Manuals,1995
+22495,PokĂ©mon Blue,"Curt Heidenreich VM, Prof. Nicolas Kuhic, Shea Jacobs DDS",Western,Haynes Manuals,1995
 22836,Crysis 2,"Greg Marvin, The Hon. Venice Shanahan",Speech,Karadi Tales,2002
 22514,Super Mario Bros.,Romeo Denesik,Essay,Bison Books,2009
 22847,Amadeus,Mara Reynolds,Comic/Graphic Novel,,2015
@@ -39,26 +39,26 @@ id,title,author,genre,publisher,year
 22783,Rush,"Lucien Durgan, Merle Dach",Historical fiction,City Lights Publishers,2023
 22925,PokĂ©mon Diamond,Miss Larry Streich,Mystery,Hay House,2015
 22970,Fortnite,Rocky Wehner,Historical fiction,Da Capo Press,2009
-22551,The Doors of Perception,"Tracey Roob, Shamika Fahey, Ms. Petrina Kohler, Keshia West V",Folklore,Adis International,1979
+22551,The Doors of Perception,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey, Tracey Roob",Folklore,Adis International,1979
 22723,Precious Bane,Gov. Donny Dibbert,Crime/Detective,McGraw Hill Financial,1968
 22928,Command & Conquer: Red Alert,Harris Langworth DDS,Tall tale,Candlewick Press,2024
 22856,Dead Poets Society,Genevieve Davis,Mystery,Gefen Publishing House,1999
 23107,Goodfellas,Crista Hane,Suspense/Thriller,Tarpaulin Sky Press,1991
 22540,Desperados 2: Cooper's Revenge,Thu Windler PhD,Textbook,Scholastic Press,1994
 23030,The Pianist,Margarito Grimes,Mythology,Manor House Publishing,2009
-22885,The Departed,"Myrtle Herzog, Kasi Kuhlman, Hailey Hermiston",Metafiction,Naiad Press,1973
-23167,Ice Climbers,"Mrs. Moon Schneider, Margarito Lueilwitz, Mariano Hamill CPA, Janeth Cartwright I",Biography/Autobiography,Pan Books,1856
+22885,The Departed,"Hailey Hermiston, Kasi Kuhlman, Myrtle Herzog",Metafiction,Naiad Press,1973
+23167,Ice Climbers,"Janeth Cartwright I, Margarito Lueilwitz, Mariano Hamill CPA, Mrs. Moon Schneider",Biography/Autobiography,Pan Books,1856
 22587,Mass Effect 2,Gov. Donny Dibbert,Fiction narrative,Earthscan,2009
-23074,Blade Runner,"Jermaine Pacocha, Jarod Cummerata",Fiction narrative,Harvard University Press,2013
-23103,Kirby's Dream Land,"Jeremiah Nitzsche, Karena Barrows, Cyril Ortiz",Biography/Autobiography,McClelland and Stewart,1991
+23074,Blade Runner,"Jarod Cummerata, Jermaine Pacocha",Fiction narrative,Harvard University Press,2013
+23103,Kirby's Dream Land,"Cyril Ortiz, Jeremiah Nitzsche, Karena Barrows",Biography/Autobiography,McClelland and Stewart,1991
 22840,Pong,Lino Donnelly,Fiction in verse,Ziff Davis Media,2023
 22615,Dungeon Keeper,Roxana Volkman,Realistic fiction,David & Charles,2026
-23141,PokĂ©mon Sapphire,"Jewell Bartell, Barton Hermann, Rev. Liberty Ward, Lucio Brakus",Classic,Velazquez Press,2012
+23141,PokĂ©mon Sapphire,"Barton Hermann, Jewell Bartell, Lucio Brakus, Rev. Liberty Ward",Classic,Velazquez Press,2012
 23144,Super Smash Bros. Ultimate,Lyndsay Bartoletti,Comic/Graphic Novel,Ballantine Books,2018
 22758,Wii Play,Prof. Kelly Altenwerth,Metafiction,Palgrave Macmillan,1996
 22991,Forrest Gump,"Ethan Cronin, Katerine Ortiz",Fiction in verse,"Harry N. Abrams, Inc.",1997
 22948,Command & Conquer: Red Alert 2 - Yuris Revenge,Nia Reynolds,Tall tale,University of Alaska Press,2019
-23171,Cinema Paradiso,"Deja Moen, Darnell Koch, Pres. Lindsey Turner",Essay,Shire Books,1950
+23171,Cinema Paradiso,"Darnell Koch, Deja Moen, Pres. Lindsey Turner",Essay,Shire Books,1950
 22898,Taming a Sea Horse,Johnna Jenkins,Mystery,Nauka,1989
 22608,Death Be Not Proud,Coy Crist IV,Mythology,Bloodaxe Books,2012
 22733,The Help,Delma White,Folklore,Hodder & Stoughton,2005
@@ -66,39 +66,39 @@ id,title,author,genre,publisher,year
 22857,LittleBigPlanet,Gov. Elias Hammes,Narrative nonfiction,University of Nebraska Press,1998
 23054,Eyeless in Gaza,Katerine Ortiz,Fable,G. P. Putnam's Sons,1988
 22815,Have His Carcase,"Alexander Kuhic, Erin Rempel DO",Fable,"Harry N. Abrams, Inc.",2017
-22676,Doom,"Ted Fahey, Edmund Davis",Legend,Brill,1982
+22676,Doom,"Edmund Davis, Ted Fahey",Legend,Brill,1982
 23027,Down to a Sunless Sea,Simona Satterfield,Fairy tale,,2012
-22873,Heat,"Lucien Turcotte, Dan Conn",Reference book,Unfinished Monument Press,2025
+22873,Heat,"Dan Conn, Lucien Turcotte",Reference book,Unfinished Monument Press,2025
 22638,Clouds of Witness,Raymond Watsica,Fantasy,Eel Pie Publishing,1985
 23166,Commandos: Behind Enemy Lines,Arletha Carter,Mythology,Faber and Faber,1992
 23005,Riot!,Herman Paucek,Fable,Fairview Press,2016
 22864,Left 4 Dead,Leigha Nikolaus,Fable,Harvard University Press,2015
 23147,PokĂ©mon X,"Ethan Cronin, Katerine Ortiz",Speech,Pecan Grove Press,1999
 22504,"Absalom, Absalom!","Chrissy Sanford, Shyla Christiansen",Horror,Harvard University Press,2005
-22835,I Will Fear No Evil,"Tinisha Pacocha II, Jorge Roberts II, Nadene Mertz",Fable,Blue Ribbon Books,2004
-22981,Halo 5: Guardians,"Prof. Jani Lindgren, Sanford Murphy, Shanti Schultz, Junko Nader",Mythopoeia,Virago Press,2026
+22835,I Will Fear No Evil,"Jorge Roberts II, Nadene Mertz, Tinisha Pacocha II",Fable,Blue Ribbon Books,2004
+22981,Halo 5: Guardians,"Junko Nader, Prof. Jani Lindgren, Sanford Murphy, Shanti Schultz",Mythopoeia,Virago Press,2026
 22849,Brand New Eyes,"Gilberto Lehner, Kent Cremin, Randi Williamson",Short story,Blackie and Son Limited,1989
-22659,PokĂ©mon LeafGreen,"Sen. Jospeh Schultz, Pres. Ryan Klein",Fanfiction,Peace Hill Press,2005
+22659,PokĂ©mon LeafGreen,"Pres. Ryan Klein, Sen. Jospeh Schultz",Fanfiction,Peace Hill Press,2005
 22668,TRON,Willa Cartwright,Short story,Banner of Truth Trust,1976
 23037,Number the Stars,Rob Mraz DVM,Fiction narrative,Nauka,2004
 22824,The Monkey's Raincoat,Clifton Durgan,Classic,Macmillan Publishers,1994
 22686,Half-Life: Opposing Force,Robert Gerlach,Classic,Voyager Books,1984
-22799,Breakfast in America,"Lucio Brakus, Rev. Liberty Ward, Barton Hermann, Jewell Bartell",Realistic fiction,Kessinger Publishing,1983
+22799,Breakfast in America,"Barton Hermann, Jewell Bartell, Lucio Brakus, Rev. Liberty Ward",Realistic fiction,Kessinger Publishing,1983
 22696,To Sail Beyond the Sunset,Geraldo Lindgren,Suspense/Thriller,Harvill Press at Random House,2011
 23165,PokĂ©mon Alpha Sapphire,Shanelle Lueilwitz,Suspense/Thriller,Manchester University Press,2015
 22626,The Sign,Isaias Ziemann,Suspense/Thriller,McFarland & Company,1974
 23157,Precious Bane,Gov. Donny Dibbert,Crime/Detective,Virgin Publishing,1978
 23205,PokĂ©mon Black 2,Pilar Walker IV,Tall tale,McGraw Hill Financial,2014
 22714,Things Fall Apart,Miss Lorina Kertzmann,Fable,D. Reidel,2007
-22717,Guitar Hero,"Tinisha Pacocha II, Nadene Mertz",Mythology,Cengage Learning,2011
+22717,Guitar Hero,"Nadene Mertz, Tinisha Pacocha II",Mythology,Cengage Learning,2011
 22848,"Such, Such Were the Joys",Raymond Watsica,Crime/Detective,Cisco Press,2022
 22705,Desperados III,Karena Barrows,Classic,O'Reilly Media,1998
 22605,Infamous,Dwight Bernier,Tall tale,Schocken Books,1990
 22920,Touch of Evil,Tracy McLaughlin Esq.,Historical fiction,Zed Books,2020
-22561,The Legend of Zelda: Breath of the Wild,"Miss Marion Lebsack, Elvis Wisozk",Biography/Autobiography,Jaico Publishing House,1985
+22561,The Legend of Zelda: Breath of the Wild,"Elvis Wisozk, Miss Marion Lebsack",Biography/Autobiography,Jaico Publishing House,1985
 22740,PokĂ©mon: Let's Go Pikachu!,Florene Bayer,Mystery,Victor Gollancz Ltd,1976
 22825,Wolfenstein: The Old Blood,Barrie Huels,Science fiction,Blackwell Publishing,1980
-22800,PokĂ©mon SoulSilver,"Miss Lorina Kertzmann, Darron Ernser",Folklore,Bloomsbury Publishing Plc,1994
+22800,PokĂ©mon SoulSilver,"Darron Ernser, Miss Lorina Kertzmann",Folklore,Bloomsbury Publishing Plc,1994
 22866,In a Glass Darkly,Ms. Lai Hayes,Short story,Felony & Mayhem Press,1835
 22703,Mario Kart: Double Dash,Alvin Cummings MD,Realistic fiction,Oberon Books,2021
 23026,The Legend of Zelda: Twilight Princess,Tressa Weimann,Fanfiction,Secker & Warburg,1988
@@ -108,19 +108,19 @@ id,title,author,genre,publisher,year
 23024,PokĂ©mon Platinum,Hyman Baumbach,Essay,Apress,2008
 23066,Quake,"Fidel Rath, Shon Renner, Tawny Schowalter",Fanfiction,,1984
 22555,Perfect Dark,Santo Durgan,Reference book,Churchill Livingstone,2003
-22982,BioShock Infinite,"Suk Krajcik, Lyndsay Bartoletti",Fiction in verse,,2008
+22982,BioShock Infinite,"Lyndsay Bartoletti, Suk Krajcik",Fiction in verse,,2008
 22883,City of God,Eryn Collins,Essay,Brill Publishers,1977
 22531,There Will Be Blood,Deja Moen,Tall tale,Banner of Truth Trust,1998
 22729,Banjo-Kazooie: Grunty's Revenge,Mai McClure,Humor,Apress,2005
 22613,Brothers in Arms,Eloy King IV,Speech,Indiana University Press,1969
 22788,Appetite for Destruction,"Carrol Cremin DDS, Ms. Ludivina Rempel",Narrative nonfiction,Charles Scribner's Sons,1968
 23110,Star Wars: Episode IX â€“ The Rise of Skywalker,"Pres. Ryan Klein, Sen. Jospeh Schultz",Horror,Ellora's Cave,1960
-22778,Butter In a Lordly Dish,"Willa Cartwright, Deja Moen",Realistic fiction,Manchester University Press,1984
+22778,Butter In a Lordly Dish,"Deja Moen, Willa Cartwright",Realistic fiction,Manchester University Press,1984
 22845,No Country for Old Men,Shanti Schultz,Essay,Simon & Schuster,2024
 22700,Once Upon a Time in America,Mrs. Latasha Muller,Reference book,Gay Men's Press,1988
 23063,Wolfenstein: The New Order,Ms. Shanice Feeney,Fiction in verse,Peace Hill Press,1997
 22912,Moab Is My Washpot,Nathan Hintz,Science fiction,Casemate Publishers,2003
-22570,Counter-Strike: Global Offensive,"Natalie Schuster, Christopher Bradtke",Comic/Graphic Novel,City Lights Publishers,1976
+22570,Counter-Strike: Global Offensive,"Christopher Bradtke, Natalie Schuster",Comic/Graphic Novel,City Lights Publishers,1976
 22834,The Soldier's Art,Christopher Bradtke,Realistic fiction,Jaico Publishing House,2013
 22955,"The Good, the Bad and the Ugly",Shirley McGlynn,Reference book,New Holland Publishers,1879
 23108,Rocky,Miss Marion Lebsack,Classic,Barrie & Jenkins,1978
@@ -131,24 +131,24 @@ id,title,author,genre,publisher,year
 22520,The Wolf of Wall Street,Marya Koch I,Classic,Koren Publishers Jerusalem,2005
 23082,Call of Duty: World at War,Roxana Volkman,Folklore,Blackie and Son Limited,2020
 22547,Star Wars: Episode III â€“ Revenge of the Sith,Filiberto Walter,Crime/Detective,Flame Tree Publishing,
-22513,Bridge over Troubled Water,"Val Towne, Arlean Gutkowski",Fantasy,Caister Academic Press,2018
+22513,Bridge over Troubled Water,"Arlean Gutkowski, Val Towne",Fantasy,Caister Academic Press,2018
 23104,"The World, the Flesh and the Devil",Minnie Weber,Fiction narrative,Hay House,1993
-22844,Now Sleeps the Crimson Petal,"Jewell Bartell, Barton Hermann, Lucio Brakus",Fable,Open Court Publishing Company,1976
+22844,Now Sleeps the Crimson Petal,"Barton Hermann, Jewell Bartell, Lucio Brakus",Fable,Open Court Publishing Company,1976
 23128,Grave of the Fireflies,Antwan Swift Ret.,Fiction narrative,Da Capo Press,1988
-22986,Dying of the Light,"Ms. Petrina Kohler, Shamika Fahey, Keshia West V",Historical fiction,Felony & Mayhem Press,1952
+22986,Dying of the Light,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey",Historical fiction,Felony & Mayhem Press,1952
 22707,Call of Duty: Black Ops,Ericka Nienow,Science fiction,Black Dog Publishing,2008
 22711,Slippery When Wet,Simona Satterfield,Mystery,City Lights Publishers,1984
 23095,How to Train Your Dragon,Oren Cremin,Fairy tale,McFarland & Company,1940
 22619,The Dark Knight,"Raleigh Mertz, Royal Mills",Mythology,Carlton Books,1997
-23075,The Third Man,"Prof. Jani Lindgren, Junko Nader, Sanford Murphy",Mystery,AndrĂ© Deutsch,1987
+23075,The Third Man,"Junko Nader, Prof. Jani Lindgren, Sanford Murphy",Mystery,AndrĂ© Deutsch,1987
 22957,Vanity Fair,Jaqueline Kemmer,Mythology,G. P. Putnam's Sons,2012
-22584,Animal Crossing: New Leaf,"Mui Price DDS, Tomoko Veum DO, Gov. Cecil Hettinger",Essay,McGraw-Hill Education,1995
+22584,Animal Crossing: New Leaf,"Gov. Cecil Hettinger, Mui Price DDS, Tomoko Veum DO",Essay,McGraw-Hill Education,1995
 22666,Super Mario Bros.,Romeo Denesik,Essay,Bantam Books,2014
 23130,Rosemary Sutcliff,Ronny Goodwin,Essay,Liberty Fund,1978
 22677,Their Greatest Hits (1971â€“1975),Madlyn Roob,Essay,Mascot Books,1987
-23169,The Bridge on the River Kwai,"Pres. Brunilda Mosciski, Msgr. Demetrius Kertzmann, Zoraida Kunde",Short story,,1990
+23169,The Bridge on the River Kwai,"Msgr. Demetrius Kertzmann, Pres. Brunilda Mosciski, Zoraida Kunde",Short story,,1990
 22656,Counter-Strike: Source,Jarod Cummerata,Western,Hamish Hamilton,2019
-22950,A Handful of Dust,"Karena Barrows, Jeremiah Nitzsche, Cyril Ortiz",Tall tale,DAW Books,1993
+22950,A Handful of Dust,"Cyril Ortiz, Jeremiah Nitzsche, Karena Barrows",Tall tale,DAW Books,1993
 23038,Life Is Beautiful,Yasmin Lakin CPA,Legend,Ballantine Books,1856
 23142,A Confederacy of Dunces,Christina Armstrong,Reference book,Manchester University Press,2019
 22721,It Happened One Night,Miss Larry Streich,Humor,Blackie and Son Limited,1968
@@ -156,14 +156,14 @@ id,title,author,genre,publisher,year
 22674,Viva la Vida or Death and All His Friends,Geraldo Lindgren,Crime/Detective,Reed Publishing,2010
 22718,12 Years a Slave,Tressa Weimann,Mystery,Zed Books,2020
 23053,The Little Foxes,Dan Conn,Horror,Burns & Oates,2003
-22708,PokĂ©mon Sword,"Tracey Roob, Keshia West V, Ms. Petrina Kohler, Shamika Fahey",Folklore,,2026
+22708,PokĂ©mon Sword,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey, Tracey Roob",Folklore,,2026
 22577,It's a Battlefield,The Hon. Venice Shanahan,Horror,HarperCollins,2017
-22646,Millennium,"Young Donnelly, Shantel Cronin, Sen. Raleigh Kris, Aida Macejkovic PhD",Comic/Graphic Novel,Bowes & Bowes,1982
-22617,Life of Brian,"Pres. Lindsey Turner, Darnell Koch",Mythopoeia,J. M. Dent,1996
+22646,Millennium,"Aida Macejkovic PhD, Sen. Raleigh Kris, Shantel Cronin, Young Donnelly",Comic/Graphic Novel,Bowes & Bowes,1982
+22617,Life of Brian,"Darnell Koch, Pres. Lindsey Turner",Mythopoeia,J. M. Dent,1996
 23189,In the Name of the Father,Isiah Batz JD,Folklore,Pecan Grove Press,2004
 22655,The Lives of Others,Miss Orville Reilly,Metafiction,Manor House Publishing,1997
-22679,Consider Phlebas,"Junko Nader, Sanford Murphy, Prof. Jani Lindgren",Horror,Carnegie Mellon University Press,2022
-22798,Specimen Days,"Prof. Winston Brown, Elena Watsica",Realistic fiction,Hackett Publishing Company,1978
+22679,Consider Phlebas,"Junko Nader, Prof. Jani Lindgren, Sanford Murphy",Horror,Carnegie Mellon University Press,2022
+22798,Specimen Days,"Elena Watsica, Prof. Winston Brown",Realistic fiction,Hackett Publishing Company,1978
 22647,Blood's a Rover,"Pres. Kimberlee Jacobi, Rosy Bechtelar JD",Western,Schocken Books,2020
 22755,Cidade de Deus,Pierre Stamm,Short story,Blue Ribbon Books,2005
 22715,Fame Is the Spur,"Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin",Historical fiction,Black Library,1983
@@ -176,7 +176,7 @@ id,title,author,genre,publisher,year
 23036,Whitney Houston,Ethan Cronin,Comic/Graphic Novel,Indiana University Press,1892
 22719,Halo 3,"Clay Mohr, Donald Dibbert II",Fiction in verse,Packt Publishing,2016
 22636,Far Cry,Minnie Weber,Mystery,Palgrave Macmillan,1919
-23164,The Grand Budapest Hotel,"Goldie Stark, Moriah McGlynn, Amada Gutmann, Jean Jones",Mythopoeia,Shire Books,2011
+23164,The Grand Budapest Hotel,"Amada Gutmann, Goldie Stark, Jean Jones, Moriah McGlynn",Mythopoeia,Shire Books,2011
 22652,Raiders of the Lost Ark,Madlyn Roob,Fiction in verse,Charles Scribner's Sons,2020
 22854,Dulce et Decorum Est,Ted Fahey,Metafiction,Holland Park Press,1874
 23042,Snatch,Jewel Gutkowski,Horror,Hogarth Press,1987
@@ -184,11 +184,11 @@ id,title,author,genre,publisher,year
 23097,The Princess Bride,Amb. September Walter,Realistic fiction,Brill,1989
 22689,Life is Strange,Aaron Stanton,Reference book,Scholastic Press,2005
 23112,Half-Life 2: Episode One,Merle Dach,Mythology,Pathfinder Press,1979
-23175,Die Hard,"Nadene Mertz, Tinisha Pacocha II, Jorge Roberts II",Horror,Ignatius Press,2025
+23175,Die Hard,"Jorge Roberts II, Nadene Mertz, Tinisha Pacocha II",Horror,Ignatius Press,2025
 22827,Mario Kart 64,Isiah Batz JD,Reference book,Signet Books,2021
 22897,Beneath the Bleeding,Fr. Valentine Hermann,Fiction in verse,Black Sparrow Books,2012
 22830,Dota 2,Thu Windler PhD,Horror,Canongate Books,1979
-22789,Clannad,"Darnell Koch, Pres. Lindsey Turner, Christina Armstrong",Humor,Harvard University Press,1991
+22789,Clannad,"Christina Armstrong, Darnell Koch, Pres. Lindsey Turner",Humor,Harvard University Press,1991
 22901,Far From the Madding Crowd,"Darnell Koch, Pres. Lindsey Turner",Comic/Graphic Novel,Harvest House,2008
 23229,The Sign,Isaias Ziemann,Suspense/Thriller,Chatto and Windus,1982
 22695,Indiana Jones and the Last Crusade,Fr. Sylvia Lueilwitz,Metafiction,Scholastic Press,1986
@@ -201,17 +201,17 @@ id,title,author,genre,publisher,year
 23149,Back in Black,Robert Gerlach,Biography/Autobiography,McGraw Hill Financial,1999
 22893,Edna O'Brien,Alfredo Frami,Humor,Mainstream Publishing,
 22658,Finding Nemo,Tracey Roob,Fable,Borgo Press,2003
-22507,The Golden Apples of the Sun,"Nga Huels, Desirae Koch, Miss Roscoe Rau",Fanfiction,Tammi,2017
+22507,The Golden Apples of the Sun,"Desirae Koch, Miss Roscoe Rau, Nga Huels",Fanfiction,Tammi,2017
 23101,An Acceptable Time,Dr. Lane Dickinson,Short story,"Farrar, Straus & Giroux",1996
 22654,Endless Night,"Barrett Mills, Stanford Auer DVM",Textbook,Hogarth Press,1997
-22858,Super Meat Boy,"Young Donnelly, Shantel Cronin, Sen. Raleigh Kris",Fable,Golden Cockerel Press,1976
+22858,Super Meat Boy,"Sen. Raleigh Kris, Shantel Cronin, Young Donnelly",Fable,Golden Cockerel Press,1976
 22990,Lilies of the Field,Tenisha Kihn II,Historical fiction,Secker & Warburg,1981
 23211,Gold: Greatest Hits,Cole Beatty,Realistic fiction,Indiana University Press,1988
 22604,The Lathe of Heaven,Bruno Pagac,Textbook,Blackwell Publishing,2011
 23000,Crash Bandicoot,Deshawn Runolfsson,Mythopoeia,Carnegie Mellon University Press,2021
-22598,A Swiftly Tilting Planet,"Royal Mills, Raleigh Mertz",Science fiction,Heyday Books,2025
-22508,The Daffodil Sky,"Yvette Pacocha Esq., Miquel Hilpert",Fairy tale,Berg Publishers,2003
-22956,Garry's Mod,"Shantel Cronin, Sen. Raleigh Kris, Young Donnelly",Classic,Happy House,2003
+22598,A Swiftly Tilting Planet,"Raleigh Mertz, Royal Mills",Science fiction,Heyday Books,2025
+22508,The Daffodil Sky,"Miquel Hilpert, Yvette Pacocha Esq.",Fairy tale,Berg Publishers,2003
+22956,Garry's Mod,"Sen. Raleigh Kris, Shantel Cronin, Young Donnelly",Classic,Happy House,2003
 22974,Come Away with Me,"Crystle Green, Karly Barton",Fairy tale,Ace Books,1986
 22983,For a Breath I Tarry,Ali Doyle,Suspense/Thriller,Marshall Pickering,1980
 22572,Helldorado,Miss Samuel Bradtke,Mythology,Anvil Press Poetry,1987
@@ -223,10 +223,10 @@ id,title,author,genre,publisher,year
 23179,All We Know Is Falling,Prof. Mafalda White,Fiction in verse,Mainstream Publishing,2005
 23004,PokĂ©mon FireRed,"Lyndsay Bartoletti, Suk Krajcik",Suspense/Thriller,Carlton Books,1980
 22750,Animal Crossing: Wild World,Georgina Beer,Fantasy,Blackie and Son Limited,1988
-22966,Day of the Tentacle,"Shon Renner, Tawny Schowalter, Fidel Rath",Western,Sams Publishing,1992
+22966,Day of the Tentacle,"Fidel Rath, Shon Renner, Tawny Schowalter",Western,Sams Publishing,1992
 23170,How to Train Your Dragon,Oren Cremin,Fairy tale,Chronicle Books,1938
 23007,Super Mario Sunshine,Alfredo Frami,Crime/Detective,Basic Books,2008
-22744,High School Musical 2,"Sonny Hahn, Elaina Bernhard, Cherise Keeling, Larisa Terry III",Classic,Chronicle Books,1985
+22744,High School Musical 2,"Cherise Keeling, Elaina Bernhard, Larisa Terry III, Sonny Hahn",Classic,Chronicle Books,1985
 23043,If I Forget Thee Jerusalem,"Demarcus King, Elvis Gislason Jr.",Essay,Gefen Publishing House,2017
 22593,The Green Bay Tree,"Greg Marvin, The Hon. Venice Shanahan",Metafiction,Kessinger Publishing,2005
 22612,Led Zeppelin IV,Carrol Cremin DDS,Metafiction,Random House,1966
@@ -235,7 +235,7 @@ id,title,author,genre,publisher,year
 22808,The Last Enemy,Florene Bayer,Historical fiction,Gaspereau Press,2023
 22965,The Curious Incident of the Dog in the Night-Time,"Alexander Kuhic, Erin Rempel DO",Narrative nonfiction,Oberon Books,2023
 22657,The Proper Study,Antwan Swift Ret.,Fiction narrative,Reed Publishing,1969
-22500,Hitman: Absolution,"Miss Lorina Kertzmann, Darron Ernser",Suspense/Thriller,Seagull Books,2023
+22500,Hitman: Absolution,"Darron Ernser, Miss Lorina Kertzmann",Suspense/Thriller,Seagull Books,2023
 23135,PokĂ©mon Red,Nick Towne,Textbook,Manchester University Press,1989
 22506,Batman Begins,Prof. Winston Brown,Science fiction,Viking Press,2002
 22979,Frozen,Lucien Durgan,Fantasy,Salt Publishing,1968
@@ -253,16 +253,16 @@ id,title,author,genre,publisher,year
 22954,Bayonetta 2,Cindie Rice,Folklore,Hodder & Stoughton,1984
 22738,Command & Conquer: Rivals,Katrice Witting,Comic/Graphic Novel,,2003
 22876,12 Angry Men,Ruben Daugherty,Essay,Happy House,1966
-23044,The Thing,"Marcia Watsica CPA, Rev. Marlin Strosin, Claud Glover, Lance Mohr Sr., The Hon. Carleen Schinner",Speech,Orchard Books,1981
+23044,The Thing,"Claud Glover, Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin, The Hon. Carleen Schinner",Speech,Orchard Books,1981
 22483,Twelve Monkeys,Luz Tromp,Classic,,1988
 22859,TRON,Willa Cartwright,Short story,Harcourt Trade Publishers,1968
 23209,Kingdom Hearts II,Tracy McLaughlin Esq.,Mythopoeia,Nauka,2011
-22607,Starcraft,"Wm Kessler, Randell Sanford, Veta O'Connell",Legend,Atheneum Books,1998
+22607,Starcraft,"Randell Sanford, Veta O'Connell, Wm Kessler",Legend,Atheneum Books,1998
 22934,Metropolis,"Barton Hermann, Jewell Bartell, Lucio Brakus",Fable,Brill Publishers,1990
-23199,Mario Kart 8 Deluxe,"Hailey Hermiston, Myrtle Herzog, Kasi Kuhlman",Fiction in verse,Boydell & Brewer,2000
-23060,Breakfast in America,"Lucio Brakus, Rev. Liberty Ward, Barton Hermann, Jewell Bartell",Realistic fiction,Chronicle Books,1984
-23155,Legend: The Best of Bob Marley & The Wailers,"Courtney Hudson, Britni Crooks",Horror,Taunton Press,1844
-22918,Call of Duty 4: Modern Warfare,"Merlin Corkery, Emmy Bode, Meta Mueller",Folklore,Matthias Media,2000
+23199,Mario Kart 8 Deluxe,"Hailey Hermiston, Kasi Kuhlman, Myrtle Herzog",Fiction in verse,Boydell & Brewer,2000
+23060,Breakfast in America,"Barton Hermann, Jewell Bartell, Lucio Brakus, Rev. Liberty Ward",Realistic fiction,Chronicle Books,1984
+23155,Legend: The Best of Bob Marley & The Wailers,"Britni Crooks, Courtney Hudson",Horror,Taunton Press,1844
+22918,Call of Duty 4: Modern Warfare,"Emmy Bode, Merlin Corkery, Meta Mueller",Folklore,Matthias Media,2000
 23146,25,Shanti Schultz,Fiction in verse,Daedalus Publishing,1988
 22899,Supernatural,Tommie Beatty,Western,Atheneum Books,1985
 23008,Cabbages and Kings,Fr. Sylvia Lueilwitz,Textbook,Virgin Publishing,1999
@@ -270,8 +270,8 @@ id,title,author,genre,publisher,year
 23221,PokĂ©mon Sun,Muriel Jenkins,Comic/Graphic Novel,,1979
 23182,Bayonetta,Alisa Nader,Humor,Simon & Schuster,1989
 22512,Kid Icarus,Lyndsay Bartoletti,Fantasy,Indiana University Press,2016
-23210,The Sun Also Rises,"Goldie Stark, Moriah McGlynn, Jean Jones",Mythopoeia,Daedalus Publishing,1984
-23227,Command & Conquer: Tiberium Alliances,"Young Donnelly, Sen. Raleigh Kris, Shantel Cronin, Aida Macejkovic PhD",Science fiction,Atheneum Books,1996
+23210,The Sun Also Rises,"Goldie Stark, Jean Jones, Moriah McGlynn",Mythopoeia,Daedalus Publishing,1984
+23227,Command & Conquer: Tiberium Alliances,"Aida Macejkovic PhD, Sen. Raleigh Kris, Shantel Cronin, Young Donnelly",Science fiction,Atheneum Books,1996
 23187,The Legend of Zelda,Owen Ferry,Fairy tale,Apress,2008
 22971,Double Indemnity,Nick Towne,Legend,AndrĂ© Deutsch,2021
 22532,To a God Unknown,The Hon. Anette Wehner,Western,Belknap Press,2003
@@ -280,7 +280,7 @@ id,title,author,genre,publisher,year
 22760,12 Angry Men,Ruben Daugherty,Essay,DAW Books,1962
 22623,Mother Night,Courtney Hudson,Tall tale,Orion Books,1982
 23077,To a God Unknown,The Hon. Anette Wehner,Western,Bloomsbury Publishing Plc,2010
-22784,All the King's Men,"Rev. Liberty Ward, Barton Hermann, Jewell Bartell, Lucio Brakus",Speech,Mandrake Press,2009
+22784,All the King's Men,"Barton Hermann, Jewell Bartell, Lucio Brakus, Rev. Liberty Ward",Speech,Mandrake Press,2009
 22747,Tender Is the Night,"Cole Beatty, Elena Watsica",Fable,Atlas Press,2003
 23213,There Will Be Blood,Deja Moen,Tall tale,Oberon Books,1971
 22820,After Many a Summer Dies the Swan,Ali Doyle,Legend,Bloomsbury Publishing Plc,1978
@@ -292,17 +292,17 @@ id,title,author,genre,publisher,year
 22867,Commandos 2: Men of Courage,Judson Parker JD,Short story,Fearless Books,2011
 22774,Hysteria,Sheryll Gottlieb,Folklore,Bantam Spectra,2024
 22524,Halo Wars,Cher Ruecker DC,Biography/Autobiography,UCL Press,1995
-22969,Firewatch,"Keshia West V, Shamika Fahey, Ms. Petrina Kohler",Mythopoeia,Blackwell Publishing,2011
+22969,Firewatch,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey",Mythopoeia,Blackwell Publishing,2011
 23138,Gandhi,Gov. Elias Hammes,Humor,Palgrave Macmillan,2013
 23220,Puyo Puyo Tetris,"Arlean Gutkowski, Christina Armstrong",Historical fiction,George Routledge & Sons,2000
 22761,Lemonade,Amb. Jamal Hettinger,Reference book,Casemate Publishers,1985
-23219,Nine Coaches Waiting,"Mayme Hintz, Gov. Donny Dibbert",Metafiction,J. M. Dent,1979
+23219,Nine Coaches Waiting,"Gov. Donny Dibbert, Mayme Hintz",Metafiction,J. M. Dent,1979
 22742,The Big Lebowski,Ruben Daugherty,Science fiction,Carlton Publishing Group,2023
 22599,Abbey Road,Jonathan Rippin,Folklore,Kensington Books,2007
 22716,Katamari Damacy,Arlean Gutkowski,Folklore,Brimstone Press,1991
 22823,Backstreet Boys,Barrie Huels,Humor,Vintage Books,1982
 23047,Shadow of the Colossus,Britni Crooks,Fairy tale,Pan Books,1874
-22640,A Wednesday,"Apryl Harber, Lakiesha Wolff, Dr. Zack Howell",Fable,Anova Books,1996
+22640,A Wednesday,"Apryl Harber, Dr. Zack Howell, Lakiesha Wolff",Fable,Anova Books,1996
 22616,No Jacket Required,Dan Conn,Crime/Detective,Anvil Press Poetry,1977
 22933,Jagged Little Pill,Msgr. Kris Satterfield,Narrative nonfiction,Kensington Books,1999
 22669,Sonic Unleashed,Oliver Gulgowski,Science fiction,Pantheon Books at Random House,2013
@@ -314,50 +314,50 @@ id,title,author,genre,publisher,year
 22860,Super Mario Odyssey,Mai McClure,Mystery,Virgin Publishing,1981
 22662,Bad,The Hon. Anette Wehner,Science fiction,Airiti Press,2009
 22510,The General,Christina Armstrong,Fable,Koren Publishers Jerusalem,1977
-22882,Paper Moon,"Savanna Grimes, Melonie Keebler, Fredrick Roob",Fairy tale,AndrĂ© Deutsch,1980
-22518,Commandos 3: Destination Berlin,"Zachariah Howe, Mrs. Thalia Cronin, Tony Greenfelder",Mythology,Vintage Books,1994
-23228,Off the Wall,"Fredrick Roob, Savanna Grimes, Melonie Keebler",Horror,Oberon Books,2018
+22882,Paper Moon,"Fredrick Roob, Melonie Keebler, Savanna Grimes",Fairy tale,AndrĂ© Deutsch,1980
+22518,Commandos 3: Destination Berlin,"Mrs. Thalia Cronin, Tony Greenfelder, Zachariah Howe",Mythology,Vintage Books,1994
+23228,Off the Wall,"Fredrick Roob, Melonie Keebler, Savanna Grimes",Horror,Oberon Books,2018
 22684,Surprised by Joy,Naomi Jakubowski,Folklore,Ballantine Books,1997
 22935,High School Musical,Deja Moen,Tall tale,Holland Park Press,2003
-23206,Spotlight,"Larisa Terry III, Sonny Hahn, Elaina Bernhard",Mystery,Indiana University Press,2024
-22673,Waiting for the Barbarians,"Rep. Hubert Quigley, Leone Kerluke",Humor,Penguin Books,1976
-23131,The Matrix,"Nadene Mertz, Tinisha Pacocha II, Darron Ernser",Essay,Butterworth-Heinemann,1901
+23206,Spotlight,"Elaina Bernhard, Larisa Terry III, Sonny Hahn",Mystery,Indiana University Press,2024
+22673,Waiting for the Barbarians,"Leone Kerluke, Rep. Hubert Quigley",Humor,Penguin Books,1976
+23131,The Matrix,"Darron Ernser, Nadene Mertz, Tinisha Pacocha II",Essay,Butterworth-Heinemann,1901
 22560,The Widening Gyre,"Pres. Kimberlee Jacobi, Rosy Bechtelar JD",Legend,Unfinished Monument Press,1997
-22637,The Kid,"Karena Barrows, Jeremiah Nitzsche, Cyril Ortiz",Speech,Library of America,1978
-22609,Mary and Max,"Val Towne, Arlean Gutkowski",Fairy tale,Victor Gollancz Ltd,1995
-22967,Saving Private Ryan,"Lawrence Borer LLD, Mamie Mraz, Latoya Maggio II",Comic/Graphic Novel,Chambers Harrap,2019
+22637,The Kid,"Cyril Ortiz, Jeremiah Nitzsche, Karena Barrows",Speech,Library of America,1978
+22609,Mary and Max,"Arlean Gutkowski, Val Towne",Fairy tale,Victor Gollancz Ltd,1995
+22967,Saving Private Ryan,"Latoya Maggio II, Lawrence Borer LLD, Mamie Mraz",Comic/Graphic Novel,Chambers Harrap,2019
 22713,Taxi Driver,Amb. September Walter,Mythopoeia,Penguin Books,2012
 22661,Thriller,Harold Kessler,Comic/Graphic Novel,Bantam Books,1984
 22852,Brandy of the Damned,Carrol Cremin DDS,Biography/Autobiography,Felony & Mayhem Press,2013
-22749,Like a Virgin,"Laverne Moore, Kraig Berge DC",Fantasy,Hackett Publishing Company,2000
+22749,Like a Virgin,"Kraig Berge DC, Laverne Moore",Fantasy,Hackett Publishing Company,2000
 23140,The Stars' Tennis Balls,Robert Gerlach,Reference book,Pantheon Books at Random House,1981
 22680,Commandos 2: Men of Courage,Judson Parker JD,Short story,Pathfinder Press,1996
 22952,Terminator 2: Judgment Day,Lavonia DuBuque,Mythopoeia,Charles Scribner's Sons,1983
 22645,Call of Duty: Modern Warfare 2,Bobby Rowe,Horror,Apress,2001
 22944,Star Wars: Episode IV â€“ A New Hope,Jacques Wolf,Mythology,Virgin Publishing,1979
-22940,Toy Story 3,"Merle Dach, Lucien Durgan",Short story,Darakwon Press,2012
+22940,Toy Story 3,"Lucien Durgan, Merle Dach",Short story,Darakwon Press,2012
 22620,Shall not Perish,Greg Marvin,Speech,Etruscan Press,1987
-23159,Ricochet,"Fr. Latoyia Orn, Emerson Lakin",Biography/Autobiography,Blue Ribbon Books,1994
+23159,Ricochet,"Emerson Lakin, Fr. Latoyia Orn",Biography/Autobiography,Blue Ribbon Books,1994
 22671,His Dark Materials,"Emerson Lakin, Lucio Terry",Horror,Martinus Nijhoff Publishers,2005
-23016,A Time of Gifts,"Pres. Andra Carroll, Ed Cassin II, Mrs. Jim Satterfield",Narrative nonfiction,Black Sparrow Books,1977
+23016,A Time of Gifts,"Ed Cassin II, Mrs. Jim Satterfield, Pres. Andra Carroll",Narrative nonfiction,Black Sparrow Books,1977
 22765,Kirby's Adventure,Edmund Davis,Science fiction,Broadview Press,1991
 22743,Look to Windward,Robert Gerlach,Fantasy,Blackwell Publishing,2007
 22622,Before Sunrise,Fr. Seymour Runte,Mythology,Taunton Press,2017
 23061,Dirty Dancing,"Jerald Hagenes, Loyd Jakubowski",Fantasy,Reed Publishing,1976
-22791,The Great Escape,"Elvis Gislason Jr., Demarcus King",Folklore,Ellora's Cave,1997
-22797,Sleep the Brave,"Mrs. Jim Satterfield, Ed Cassin II, Pres. Andra Carroll",Classic,Basic Books,1994
-22753,Dying of the Light,"Ms. Petrina Kohler, Shamika Fahey, Keshia West V",Historical fiction,New English Library,1979
+22791,The Great Escape,"Demarcus King, Elvis Gislason Jr.",Folklore,Ellora's Cave,1997
+22797,Sleep the Brave,"Ed Cassin II, Mrs. Jim Satterfield, Pres. Andra Carroll",Classic,Basic Books,1994
+22753,Dying of the Light,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey",Historical fiction,New English Library,1979
 22903,A Farewell to Arms,Owen Ferry,Legend,No Starch Press,2005
 22631,The Yellow Meads of Asphodel,Jude Rogahn,Science fiction,George Routledge & Sons,1981
 22678,Casablanca,Cher Ruecker DC,Western,Bantam Books,2015
 22648,Desperados: Wanted Dead or Alive,Stanford Auer DVM,Humor,Anova Books,2005
-22728,Super Mario Galaxy,"Gov. Cecil Hettinger, Tomoko Veum DO, Mui Price DDS",Crime/Detective,Kodansha,1988
+22728,Super Mario Galaxy,"Gov. Cecil Hettinger, Mui Price DDS, Tomoko Veum DO",Crime/Detective,Kodansha,1988
 22887,Stand by Me,"Elena Watsica, Prof. Winston Brown",Essay,Bantam Books,2001
-23012,Wii Sports Resort,"Owen Ferry, Gov. Elias Hammes",Realistic fiction,Etruscan Press,1987
+23012,Wii Sports Resort,"Gov. Elias Hammes, Owen Ferry",Realistic fiction,Etruscan Press,1987
 23126,The Witcher 2: Assassins of Kings,Tressa Weimann,Metafiction,Berg Publishers,2023
 22914,The Legend of Zelda: Ocarina of Time,Sen. Vesta Denesik,Short story,Flame Tree Publishing,1999
 22916,Highway Blossoms,"Elena Watsica, Prof. Winston Brown",Historical fiction,Boydell & Brewer,1998
-22539,Gladiator,"Zoraida Kunde, Msgr. Demetrius Kertzmann, Pres. Brunilda Mosciski",Fantasy,No Starch Press,2006
+22539,Gladiator,"Msgr. Demetrius Kertzmann, Pres. Brunilda Mosciski, Zoraida Kunde",Fantasy,No Starch Press,2006
 22685,Half-Life,Aida Macejkovic PhD,Tall tale,Golden Cockerel Press,2007
 22937,The Colour of My Love,Narcisa Pagac,Fiction narrative,Papadakis Publisher,2006
 22763,The Legend of Zelda: Skyward Sword,Dudley Lebsack,Tall tale,Airiti Press,1999
@@ -367,8 +367,8 @@ id,title,author,genre,publisher,year
 23222,In Dubious Battle,The Hon. Anette Wehner,Mythology,O'Reilly Media,2016
 22803,Braveheart,Tawana Mueller,Horror,HarperCollins,1984
 22927,The Way Through the Woods,Cherise Keeling,Speech,Parachute Publishing,1992
-23208,Songs About Jane,"Shyla Christiansen, Chrissy Sanford",Fable,HarperTrophy,1976
-22641,Crysis,"Sadye Dibbert, Amb. Wai Johnson",Fiction narrative,Addison-Wesley,1995
+23208,Songs About Jane,"Chrissy Sanford, Shyla Christiansen",Fable,HarperTrophy,1976
+22641,Crysis,"Amb. Wai Johnson, Sadye Dibbert",Fiction narrative,Addison-Wesley,1995
 23083,Hotel Rwanda,Barrie Huels,Classic,Horizon Scientific Press,
 22785,The Glory and the Dream,Ethan Cronin,Fairy tale,Ignatius Press,2011
 22891,Everything is Illuminated,Lucien Turcotte,Comic/Graphic Novel,Book Works,1995
@@ -380,27 +380,27 @@ id,title,author,genre,publisher,year
 22998,Monster Hunter: World,Clifton Durgan,Crime/Detective,Banner of Truth Trust,2026
 22664,PokĂ©mon Crystal,Abram Hayes,Tall tale,FabJob,2004
 22690,"HIStory: Past, Present and Future, Book I",Rogelio Hodkiewicz,Horror,Fairview Press,1984
-22663,Mario Kart 8,"Royal Mills, Raleigh Mertz",Fantasy,Vintage Books,2014
+22663,Mario Kart 8,"Raleigh Mertz, Royal Mills",Fantasy,Vintage Books,2014
 23172,Good Will Hunting,Ofelia Bradtke,Horror,Tartarus Press,1994
 22973,Devil May Cry,Francine Grant,Realistic fiction,Bloodaxe Books,2013
 23057,The Waste Land,Clark Corwin,Humor,Da Capo Press,2013
-23150,Yoshi's Wooly World,"Rev. Marlin Strosin, Marcia Watsica CPA, Lance Mohr Sr., Barrett Mills",Legend,D. Reidel,2025
+23150,Yoshi's Wooly World,"Barrett Mills, Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin",Legend,D. Reidel,2025
 23094,The Marshall Mathers LP,Cyril Krajcik,Classic,Shoemaker & Hoard Publishers,2007
 23160,Born in the U.S.A.,"Ms. Shanice Feeney, Stephnie Feest",Short story,Manor House Publishing,2007
-23132,Bat Out of Hell,"Jeremiah Nitzsche, Cyril Ortiz",Fantasy,Shire Books,1983
+23132,Bat Out of Hell,"Cyril Ortiz, Jeremiah Nitzsche",Fantasy,Shire Books,1983
 22511,Diablo III,Ofelia Bradtke,Short story,Golden Cockerel Press,1995
 23088,God of War,Courtney Hudson,Realistic fiction,Macmillan Publishers,1979
 23067,Network,Tracey Roob,Textbook,University of Chicago Press,2026
 22509,Room,The Hon. Venice Shanahan,Legend,Berg Publishers,1992
 22806,Time of our Darkness,Cyril Krajcik,Science fiction,Black Sparrow Books,2000
-22710,PokĂ©mon Y,"Christina Armstrong, Pres. Lindsey Turner, Darnell Koch",Realistic fiction,Imperial War Museum,1977
-22929,Kirby's Epic Yarn,"Florentino Stanton, Bobbie Kirlin, Prof. Jean Wiza",Mythopoeia,Atlas Press,2003
+22710,PokĂ©mon Y,"Christina Armstrong, Darnell Koch, Pres. Lindsey Turner",Realistic fiction,Imperial War Museum,1977
+22929,Kirby's Epic Yarn,"Bobbie Kirlin, Florentino Stanton, Prof. Jean Wiza",Mythopoeia,Atlas Press,2003
 22926,Mass Effect 3,Jacques Wolf,Short story,Shoemaker & Hoard Publishers,1846
 22698,Hotel California,Suk Krajcik,Classic,Borgo Press,1997
 22961,Greatest Hits,Harold Kessler,Mythology,Harcourt Trade Publishers,1977
 22691,Donnie Darko,Tawana Mueller,Essay,George Routledge & Sons,2022
-22519,Antic Hay,"Suk Krajcik, Lyndsay Bartoletti",Fantasy,Taylor & Francis,1989
-23086,The Green Mile,"Karly Barton, Crystle Green",Mythopoeia,Fearless Books,2019
+22519,Antic Hay,"Lyndsay Bartoletti, Suk Krajcik",Fantasy,Taylor & Francis,1989
+23086,The Green Mile,"Crystle Green, Karly Barton",Mythopoeia,Fearless Books,2019
 22702,Star Wars: Episode VI - Return of the Jedi,Tracy McLaughlin Esq.,Humor,Borgo Press,1983
 23148,L.A. Confidential,Julietta Goyette DDS,Fiction in verse,HarperTrophy,1977
 23018,PokĂ©mon Pearl,Suk Krajcik,Fiction narrative,Lion Hudson,2009
@@ -408,15 +408,15 @@ id,title,author,genre,publisher,year
 23124,Great Work of Time,Stephnie Feest,Historical fiction,Mapin Publishing,1982
 22621,Bastion,"Britni Crooks, Courtney Hudson",Biography/Autobiography,Jarrolds Publishing,2011
 23215,Toy Story,Eve Kautzer III,Fairy tale,Charles Scribner's Sons,2006
-23025,Jurassic Park,"Miss Lorina Kertzmann, Darron Ernser",Biography/Autobiography,Atheneum Books,1976
-23223,To Kill a Mockingbird,"Willa Cartwright, Deja Moen",Horror,Faber and Faber,1983
+23025,Jurassic Park,"Darron Ernser, Miss Lorina Kertzmann",Biography/Autobiography,Atheneum Books,1976
+23223,To Kill a Mockingbird,"Deja Moen, Willa Cartwright",Horror,Faber and Faber,1983
 22565,Oldboy,Charlie Jaskolski,Fiction in verse,Tarpaulin Sky Press,1971
 22994,PokĂ©mon Yellow,Natisha Daugherty,Short story,George H. Doran Company,1999
 23198,The Wealth of Nations,Oda Gerlach,Crime/Detective,Bloodaxe Books,2015
 22712,All About Eve,Malik Hodkiewicz,Comic/Graphic Novel,Booktrope,1976
 22642,Castle Crashers,Eleonor Erdman,Folklore,Naiad Press,1859
-22487,The Lord of the Rings: The Two Towers,"Hildegarde Cummerata, Timothy Blanda, Margarete Hane",Fiction narrative,,1978
-22741,That Good Night,"Loralee Yundt, Gov. Porfirio Ebert",Western,Unfinished Monument Press,1990
+22487,The Lord of the Rings: The Two Towers,"Hildegarde Cummerata, Margarete Hane, Timothy Blanda",Fiction narrative,,1978
+22741,That Good Night,"Gov. Porfirio Ebert, Loralee Yundt",Western,Unfinished Monument Press,1990
 22833,Cover Her Face,Jude Rogahn,Reference book,Manning Publications,2013
 22792,The Lord of the Rings: The Return of the King,Genevieve Davis,Legend,Cisco Press,1981
 22838,WarioWare: Touched!,Cole Beatty,Mystery,Shire Books,1987
@@ -428,7 +428,7 @@ id,title,author,genre,publisher,year
 22562,3 Idiots,Ms. Shanice Feeney,Western,Dedalus Books,2018
 22888,Rumours,Julietta Goyette DDS,Textbook,Chambers Harrap,2015
 22947,Time To Murder And Create,Cindie Rice,Metafiction,City Lights Publishers,1981
-22945,Nuovo Cinema Paradiso,"Cherise Keeling, Sonny Hahn, Elaina Bernhard, Larisa Terry III",Fiction in verse,Kessinger Publishing,2017
+22945,Nuovo Cinema Paradiso,"Cherise Keeling, Elaina Bernhard, Larisa Terry III, Sonny Hahn",Fiction in verse,Kessinger Publishing,2017
 22829,Spice,Aaron Stanton,Realistic fiction,Harlequin Enterprises Ltd,1978
 22575,Batman: Arkham City,Rob Mraz DVM,Fantasy,Churchill Livingstone,1978
 22894,The Way of All Flesh,Mara Reynolds,Mythology,John Blake Publishing,2020
@@ -451,21 +451,21 @@ id,title,author,genre,publisher,year
 22881,The House of Mirth,Lucio Terry,Realistic fiction,Carlton Books,2006
 22492,Mario Kart Wii,Emerson Lakin,Reference book,Brimstone Press,1995
 23069,Tapestry,Graham Schaefer DO,Fiction in verse,T & T Clark,1993
-23212,Super Smash Bros. Brawl,"Jewell Volkman, Narcisa Kozey Jr., Aleida Nienow",Mystery,Dalkey Archive Press,1871
+23212,Super Smash Bros. Brawl,"Aleida Nienow, Jewell Volkman, Narcisa Kozey Jr.",Mystery,Dalkey Archive Press,1871
 22794,Casino,Jorge Roberts II,Fiction in verse,Jaico Publishing House,1984
 22781,Witness for the Prosecution,Tawana Mueller,Mythopoeia,Holt McDougal,2024
 22583,Some Like It Hot,Eleonor Erdman,Fiction in verse,Gay Men's Press,1999
-22542,Portal,"Marcia Watsica CPA, Lance Mohr Sr., Rev. Marlin Strosin",Fanfiction,Signet Books,1978
-22588,Sunrise: A Song of Two Humans,"Pres. Lindsey Turner, Darnell Koch, Deja Moen",Historical fiction,HarperCollins,1977
+22542,Portal,"Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin",Fanfiction,Signet Books,1978
+22588,Sunrise: A Song of Two Humans,"Darnell Koch, Deja Moen, Pres. Lindsey Turner",Historical fiction,HarperCollins,1977
 22567,Whitney,Fr. Seymour Runte,Reference book,Mainstream Publishing,1997
 23226,Fear and Trembling,Lino Donnelly,Suspense/Thriller,Fearless Books,1976
 22768,Pac-Man,Nia Reynolds,Mythopoeia,New Holland Publishers,1989
 22756,The Sixth Sense,Prof. Mafalda White,Fable,Atheneum Books,1997
 22907,The Bodyguard,Dr. Lane Dickinson,Horror,Schocken Books,
-22706,V for Vendetta,"Ms. Petrina Kohler, Shamika Fahey, Tracey Roob, Keshia West V",Western,Penguin Books,2026
-23116,Super Mario World,"Jeremiah Nitzsche, Karena Barrows, Cyril Ortiz",Mystery,Chronicle Books,1999
+22706,V for Vendetta,"Keshia West V, Ms. Petrina Kohler, Shamika Fahey, Tracey Roob",Western,Penguin Books,2026
+23116,Super Mario World,"Cyril Ortiz, Jeremiah Nitzsche, Karena Barrows",Mystery,Chronicle Books,1999
 23009,Command & Conquer: Generals,Alline Williamson,Biography/Autobiography,Banner of Truth Trust,1998
-22643,Commandos: Beyond the Call of Duty,"Fr. Latoyia Orn, Emerson Lakin",Folklore,Parragon,2002
+22643,Commandos: Beyond the Call of Duty,"Emerson Lakin, Fr. Latoyia Orn",Folklore,Parragon,2002
 22582,Alien,Romona Buckridge,Tall tale,Basic Books,2023
 22670,PokĂ©mon Emerald,Mazie Parker DC,Suspense/Thriller,Central European University Press,2018
 23106,A Passage to India,Isaias Ziemann,Suspense/Thriller,Addison-Wesley,2001
@@ -477,7 +477,7 @@ id,title,author,genre,publisher,year
 22759,Backstreet's Back,Napoleon Legros,Fantasy,Airiti Press,1983
 23022,How to Train Your Dragon,Oren Cremin,Fairy tale,Open University Press,1914
 22484,Animal Crossing,"Crystle Green, Karly Barton",Fiction narrative,Cengage Learning,1998
-22526,Command & Conquer: Red Alert 2,"Tracy McLaughlin Esq., Amb. September Walter",Short story,Ballantine Books,2010
+22526,Command & Conquer: Red Alert 2,"Amb. September Walter, Tracy McLaughlin Esq.",Short story,Ballantine Books,2010
 23006,The Mermaids Singing,Ethan Cronin,Realistic fiction,Penguin Books,2000
 22498,The Usual Suspects,Mamie Hudson,Historical fiction,Anvil Press Poetry,1977
 22523,Halo 2,Bennett Schuster,Mystery,Chick Publications,2011
@@ -485,7 +485,7 @@ id,title,author,genre,publisher,year
 22984,Tiger! Tiger!,Monique Doyle,Tall tale,Horizon Scientific Press,2003
 22681,The Bourne Ultimatum,Daryl Gottlieb I,Reference book,Hodder Headline,1990
 22493,Mr. Smith Goes to Washington,Ruben Daugherty,Textbook,Scholastic Press,1979
-22972,Mary and Max,"Val Towne, Arlean Gutkowski",Fairy tale,Penguin Books,1986
+22972,Mary and Max,"Arlean Gutkowski, Val Towne",Fairy tale,Penguin Books,1986
 23153,Carrion Comfort,Britni Crooks,Textbook,Berg Publishers,1988
 22556,WarioWare: Touched!,Cole Beatty,Mystery,Mapin Publishing,1979
 22625,North by Northwest,Prof. Carlo Sporer,Historical fiction,Academic Press,1966
@@ -494,22 +494,22 @@ id,title,author,genre,publisher,year
 22736,Max Payne 3,Clay Williamson VM,Humor,No Starch Press,1986
 22943,City Lights,Lucien Turcotte,Realistic fiction,Atlas Press,1981
 22811,This Side of Paradise,Fr. Seymour Runte,Classic,Mainstream Publishing,2012
-22865,The Departed,"Myrtle Herzog, Kasi Kuhlman, Hailey Hermiston",Metafiction,NavPress,1977
+22865,The Departed,"Hailey Hermiston, Kasi Kuhlman, Myrtle Herzog",Metafiction,NavPress,1977
 22529,Catch Me If You Can,Harold Kessler,Fiction narrative,Chick Publications,2011
-22724,Hacksaw Ridge,"Jermaine Pacocha, Jarod Cummerata",Mystery,Sams Publishing,1978
+22724,Hacksaw Ridge,"Jarod Cummerata, Jermaine Pacocha",Mystery,Sams Publishing,1978
 22683,Vertigo,Dewey Ernser,Textbook,Jarrolds Publishing,2002
 23020,Inside Out,Harris Langworth DDS,Mystery,Mandrake Press,2025
 22564,Wii Sports,Lucio Terry,Tall tale,New Directions Publishing,2024
 23121,A Monstrous Regiment of Women,Rodolfo Dietrich,Classic,Ignatius Press,1991
 23192,From Here to Eternity,Natisha Daugherty,Fanfiction,John Blake Publishing,1984
 23031,Titanic: Music from the Motion Picture,Ronny Goodwin,Fanfiction,Golden Cockerel Press,2023
-22548,Mega Man Battle Network,"Mrs. Moon Schneider, Mariano Hamill CPA, Margarito Lueilwitz, Janeth Cartwright I",Metafiction,Open University Press,2026
+22548,Mega Man Battle Network,"Janeth Cartwright I, Margarito Lueilwitz, Mariano Hamill CPA, Mrs. Moon Schneider",Metafiction,Open University Press,2026
 22902,Frozen,Lucien Durgan,Fantasy,D. Reidel,1973
 23183,A Darkling Plain,Rev. Liberty Ward,Essay,Haynes Manuals,1979
 23125,"Paris, Texas",Dwight Bernier,Humor,Velazquez Press,1993
 22544,A Time to Kill,Leone Kerluke,Suspense/Thriller,Gay Men's Press,1999
 23168,"Alone on a Wide, Wide Sea",Mamie Hudson,Fiction narrative,Shuter & Shooter Publishers,2006
-22889,Nectar in a Sieve,"Lucien Turcotte, James Brown Esq.",Fanfiction,Bantam Books,2008
+22889,Nectar in a Sieve,"James Brown Esq., Lucien Turcotte",Fanfiction,Bantam Books,2008
 22989,Civilization V,Christopher Bradtke,Biography/Autobiography,Banner of Truth Trust,1999
 23123,Fair Stood the Wind for France,Prof. Mafalda White,Biography/Autobiography,Parragon,1979
 23085,Appetite for Destruction,"Carrol Cremin DDS, Ms. Ludivina Rempel",Narrative nonfiction,Mandrake Press,1962
@@ -518,7 +518,7 @@ id,title,author,genre,publisher,year
 22494,Shutter Island,Ted Fahey,Fiction narrative,University of Minnesota Press,1991
 23194,Psycho,Alline Williamson,Fairy tale,Mandrake of Oxford,1997
 22960,North by Northwest,Prof. Carlo Sporer,Historical fiction,Vintage Books,1982
-22842,The Skull Beneath the Skin,"Pres. Lindsey Turner, Darnell Koch, Deja Moen",Reference book,Black Dog Publishing,2000
+22842,The Skull Beneath the Skin,"Darnell Koch, Deja Moen, Pres. Lindsey Turner",Reference book,Black Dog Publishing,2000
 23139,Eternal Sunshine of the Spotless Mind,Ms. Ludivina Rempel,Science fiction,Bellevue Literary Press,1988
 23100,Paths of Glory,Dewey Ernser,Reference book,Harper & Row,2017
 23180,The Sting,Aida Macejkovic PhD,Essay,Earthscan,1999
@@ -539,7 +539,7 @@ id,title,author,genre,publisher,year
 22995,Happy Nation,Oren Cremin,Classic,Harvard University Press,1979
 22601,The Moving Toyshop,Cher Ruecker DC,Fiction in verse,G-Unit Books,1992
 23028,A Summer Bird-Cage,Ali Doyle,Narrative nonfiction,Verso Books,1984
-22746,PokĂ©mon Ultra Sun,"Prof. Nicolas Kuhic, Curt Heidenreich VM, Shea Jacobs DDS",Mythopoeia,Manning Publications,2025
+22746,PokĂ©mon Ultra Sun,"Curt Heidenreich VM, Prof. Nicolas Kuhic, Shea Jacobs DDS",Mythopoeia,Manning Publications,2025
 22546,Max Payne,Dominique Dickinson,Speech,,1999
 23114,The Elephant Man,Bruno Pagac,Reference book,Ignatius Press,2016
 23071,The Silence of the Lambs,Chance Harris,Humor,"Harry N. Abrams, Inc.",2008
@@ -547,9 +547,9 @@ id,title,author,genre,publisher,year
 23065,The Heart Is Deceitful Above All Things,Genevieve Davis,Classic,,1997
 23151,The Proper Study,Antwan Swift Ret.,Fiction narrative,Flame Tree Publishing,1993
 22503,Oops!... I Did It Again,Dwain Schmitt,Fable,Berkley Books,1976
-22630,The Other Side of Silence,"Erin Rempel DO, Alexander Kuhic",Legend,Mapin Publishing,1994
+22630,The Other Side of Silence,"Alexander Kuhic, Erin Rempel DO",Legend,Mapin Publishing,1994
 22851,PokĂ©mon White 2,Naomi Jakubowski,Reference book,Darakwon Press,1985
-22628,Chinatown,"Shyla Christiansen, Chrissy Sanford",Science fiction,Apress,1995
+22628,Chinatown,"Chrissy Sanford, Shyla Christiansen",Science fiction,Apress,1995
 22826,Wolfenstein 2: The New Colossus,Mayme Hintz,Fantasy,Etruscan Press,2002
 22675,Mega Man,Chance Harris,Essay,D. Reidel,1979
 23133,Super Mario Bros. 2,Stanford Auer DVM,Fanfiction,New Holland Publishers,2001
@@ -562,7 +562,7 @@ id,title,author,genre,publisher,year
 22837,Quo Vadis,Clifton MacGyver,Western,John Blake Publishing,2025
 22600,"Lock, Stock and Two Smoking Barrels",Greg Marvin,Comic/Graphic Novel,Berg Publishers,1980
 22566,Blithe Spirit,The Hon. Venice Shanahan,Metafiction,Banner of Truth Trust,1950
-23177,Recalled to Life,"Pres. Lindsey Turner, Darnell Koch, Deja Moen",Biography/Autobiography,Harper & Row,2024
+23177,Recalled to Life,"Darnell Koch, Deja Moen, Pres. Lindsey Turner",Biography/Autobiography,Harper & Row,2024
 22819,Boston,Jewel Gutkowski,Fanfiction,Mandrake of Oxford,1988
 22578,Gone with the Wind,Ms. Shanice Feeney,Tall tale,University of Chicago Press,2015
 22900,Just Cause 2,"Carrol Cremin DDS, Ms. Ludivina Rempel",Classic,Pan Books,2017
@@ -573,14 +573,14 @@ id,title,author,genre,publisher,year
 23068,Postern of Fate,"Dan Conn, Lucien Turcotte",Legend,Jaico Publishing House,1991
 23105,Crash Bandicoot,Deshawn Runolfsson,Mythopoeia,Tartarus Press,2001
 23049,Star Wars: Episode VII - The Force Awakens,"Crystle Green, Karly Barton",Crime/Detective,University of Minnesota Press,1990
-22795,Little Hands Clapping,"Shyla Christiansen, Chrissy Sanford",Fairy tale,HarperPrism,1997
+22795,Little Hands Clapping,"Chrissy Sanford, Shyla Christiansen",Fairy tale,HarperPrism,1997
 22489,PokĂ©mon Omega Ruby,Rene Bins Sr.,Western,Secker & Warburg,1981
 22813,La La Land,Dave Schroeder,Legend,Voyager Books,2012
 22624,Groundhog Day,Alvin Cummings MD,Fantasy,Bantam Spectra,1984
 23176,When the Green Woods Laugh,Cathy Tromp,Short story,Mascot Books,1981
 23029,Star Wars,Demarcus King,Humor,Haynes Manuals,2020
 22754,Dookie,Karena Barrows,Science fiction,Hogarth Press,1994
-22980,For Whom the Bell Tolls,"Laverne Moore, Kraig Berge DC",Fiction in verse,"Harry N. Abrams, Inc.",1978
+22980,For Whom the Bell Tolls,"Kraig Berge DC, Laverne Moore",Fiction in verse,"Harry N. Abrams, Inc.",1978
 23145,Halo 4,Ahmad Schuppe,Fairy tale,Mark Batty Publisher,1965
 22536,Grease: The Original Soundtrack from the Motion Picture,Marisha Stoltenberg,Science fiction,Libertas Academica,2020
 22850,Jacob Have I Loved,Napoleon Legros,Suspense/Thriller,Cloverdale Corporation,1992
@@ -588,7 +588,7 @@ id,title,author,genre,publisher,year
 22862,Oh! To be in England,Kathi Huels,Fable,University of Minnesota Press,2010
 23098,The Moon by Night,Genevieve Davis,Reference book,Parragon,2004
 23195,Memento,Judson Parker JD,Reference book,Matthias Media,1999
-23207,Se7en,"Prof. Jean Wiza, Bobbie Kirlin, Florentino Stanton",Textbook,Bellevue Literary Press,1998
+23207,Se7en,"Bobbie Kirlin, Florentino Stanton, Prof. Jean Wiza",Textbook,Bellevue Literary Press,1998
 22801,...Baby One More Time,Marta Kling,Fantasy,Belknap Press,2006
 22997,Max Payne 2: The Fall of Max Payne,Edgardo Aufderhar JD,Fable,Blue Ribbon Books,2000
 23052,The Great Dictator,Chance Harris,Mythopoeia,Zondervan,1982
@@ -598,20 +598,20 @@ id,title,author,genre,publisher,year
 23119,Dial M for Murder,Susy Rogahn,Comic/Graphic Novel,Harcourt Trade Publishers,1868
 22905,Monty Python and the Holy Grail,Rodolfo Dietrich,Speech,Zondervan,1977
 23152,Half-Life 2: Episode Two,Darron Ernser,Speech,Dalkey Archive Press,2007
-22919,Jurassic Park,"Miss Lorina Kertzmann, Darron Ernser",Biography/Autobiography,FabJob,1983
+22919,Jurassic Park,"Darron Ernser, Miss Lorina Kertzmann",Biography/Autobiography,FabJob,1983
 23137,Command & Conquer: Red Alert 3,Deja Moen,Historical fiction,Black Dog Publishing,1980
 22870,Beauty and the Beast,Eryn Collins,Fantasy,Barrie & Jenkins,1983
 22871,Tirra Lirra by the River,Bennett Schuster,Horror,Reed Publishing,1985
 22596,For a Breath I Tarry,Ali Doyle,Suspense/Thriller,UCL Press,1986
-22585,The Treasure of the Sierra Madre,"Minnie Weber, Barrett Mills",Western,Holland Park Press,1981
+22585,The Treasure of the Sierra Madre,"Barrett Mills, Minnie Weber",Western,Holland Park Press,1981
 22821,Pale Kings and Princes,Marisha Stoltenberg,Horror,Pavilion Books,2013
-22762,The Last of Us,"Jewell Volkman, Narcisa Kozey Jr., Alfredo Frami, Aleida Nienow",Humor,Breslov Research Institute,1992
-22522,Wolfenstein 3D,"Prof. Winston Brown, Elena Watsica",Essay,Eerdmans Publishing,1979
-22734,Civilization IV,"Ruben Daugherty, Rocky Wehner",Fiction narrative,Victor Gollancz Ltd,1991
+22762,The Last of Us,"Aleida Nienow, Alfredo Frami, Jewell Volkman, Narcisa Kozey Jr.",Humor,Breslov Research Institute,1992
+22522,Wolfenstein 3D,"Elena Watsica, Prof. Winston Brown",Essay,Eerdmans Publishing,1979
+22734,Civilization IV,"Rocky Wehner, Ruben Daugherty",Fiction narrative,Victor Gollancz Ltd,1991
 23161,As I Lay Dying,"Alvin Cummings MD, Miss Lorina Kertzmann",Legend,Pen and Sword Books,2021
 23093,That Hideous Strength,Ethan Cronin,Folklore,Brill Publishers,1993
 22804,Wildfire at Midnight,Fr. Bo Schaefer,Science fiction,Chatto and Windus,1946
-23102,Midnight Memories,"Katerine Ortiz, Ethan Cronin",Reference book,Ace Books,1978
+23102,Midnight Memories,"Ethan Cronin, Katerine Ortiz",Reference book,Ace Books,1978
 22611,Inception,Prof. Mafalda White,Realistic fiction,Horizon Scientific Press,2003
 22538,The Lion King,Jacques Wolf,Western,HMSO,1986
 23174,F-Zero,Herman Paucek,Fable,Jarrolds Publishing,2005
@@ -626,18 +626,18 @@ id,title,author,genre,publisher,year
 22895,Battletoads,Filiberto Walter,Mythology,O'Reilly Media,1988
 22633,Mad Max: Fury Road,Luz Tromp,Western,Harlequin Enterprises Ltd,1981
 22528,The Godfather,Herman Paucek,Mythology,Velazquez Press,2012
-23084,Half-Life 2,"Laverne Moore, Kraig Berge DC",Crime/Detective,Belknap Press,2010
+23084,Half-Life 2,"Kraig Berge DC, Laverne Moore",Crime/Detective,Belknap Press,2010
 23158,The Wonderful 101,Kennith Funk,Fantasy,Daedalus Publishing,2007
 22923,The Legend of Zelda: Majora's Mask,Malik Hodkiewicz,Fiction narrative,Scholastic Press,1992
 22687,Citizen Kane,Kennith Funk,Biography/Autobiography,University of Nebraska Press,2015
 22917,Life Is Beautiful,Yasmin Lakin CPA,Legend,Mascot Books,1858
-22802,Banjo-Kazooie: Nuts & Bolts,"The Hon. Carleen Schinner, Claud Glover",Short story,Brill,2002
+22802,Banjo-Kazooie: Nuts & Bolts,"Claud Glover, The Hon. Carleen Schinner",Short story,Brill,2002
 22722,PokĂ©mon Black,Mr. Shirley Tromp,Legend,Carlton Books,1979
 22653,The Parliament of Man,Jermaine Pacocha,Fantasy,Barrie & Jenkins,1978
-22924,Super Mario Bros. 3,"Mamie Mraz, Lawrence Borer LLD, Latoya Maggio II",Classic,Borgo Press,1998
+22924,Super Mario Bros. 3,"Latoya Maggio II, Lawrence Borer LLD, Mamie Mraz",Classic,Borgo Press,1998
 22773,O Pioneers!,Mr. Earl Kohler,Biography/Autobiography,Pan Books,1996
 22592,Metroid Prime,Deshawn Runolfsson,Textbook,Breslov Research Institute,1982
-22505,Wii Music,"Gonzalo Ritchie, Stephnie Feest, Elidia Renner",Speech,Tammi,1853
+22505,Wii Music,"Elidia Renner, Gonzalo Ritchie, Stephnie Feest",Speech,Tammi,1853
 23218,The Shawshank Redemption,Malik Hodkiewicz,Fairy tale,Sams Publishing,1990
 22985,Back to the Future,Pedro Wuckert JD,Essay,Hodder & Stoughton,
 22486,Luigi's Mansion,Edgardo Aufderhar JD,Fanfiction,Manning Publications,1976
@@ -648,11 +648,11 @@ id,title,author,genre,publisher,year
 22516,A Scanner Darkly,Harris Langworth DDS,Fiction in verse,McGraw Hill Financial,2014
 23062,12 Angry Men,Ruben Daugherty,Essay,University of Michigan Press,1976
 22992,To Say Nothing of the Dog,Clifton MacGyver,Western,J. M. Dent,2013
-23113,Shadow Tactics: Blade of the Shogun,"Mariano Hamill CPA, Mrs. Moon Schneider, Margarito Lueilwitz",Speech,Blackstaff Press,1990
+23113,Shadow Tactics: Blade of the Shogun,"Margarito Lueilwitz, Mariano Hamill CPA, Mrs. Moon Schneider",Speech,Blackstaff Press,1990
 22485,I Know Why the Caged Bird Sings,Tawana Mueller,Fiction in verse,Unfinished Monument Press,2017
 22552,Commandos: Strike Force,Jarrod Corkery,Suspense/Thriller,Focal Press,2006
 22704,Princess Mononoke,Gladis Pouros,Fiction narrative,Ten Speed Press,2013
-23117,Tracy Chapman,"Cherise Keeling, Sonny Hahn, Larisa Terry III, Elaina Bernhard",Classic,Matthias Media,1986
+23117,Tracy Chapman,"Cherise Keeling, Elaina Bernhard, Larisa Terry III, Sonny Hahn",Classic,Matthias Media,1986
 22772,Dunkirk,Jonathan Rippin,Fable,City Lights Publishers,1985
 23115,Judgment at Nuremberg,"Clay Mohr, Donald Dibbert II",Speech,Blackie and Son Limited,2013
 23163,Blue Remembered Earth,"Hailey Hermiston, Kasi Kuhlman, Myrtle Herzog",Essay,Manchester University Press,2022
@@ -661,18 +661,18 @@ id,title,author,genre,publisher,year
 22796,Hands All Over,Fr. Sylvia Lueilwitz,Suspense/Thriller,Candlewick Press,2001
 22667,Dwarf Fortress,Amb. September Walter,Mythopoeia,City Lights Publishers,2008
 22515,Recovery,Clifton Durgan,Fairy tale,D. Reidel,1998
-22771,The Terminator,"Tomoko Veum DO, Gov. Cecil Hettinger, Mui Price DDS",Western,Elsevier,2016
+22771,The Terminator,"Gov. Cecil Hettinger, Mui Price DDS, Tomoko Veum DO",Western,Elsevier,2016
 22767,Inglourious Basterds,Benny Rolfson,Mystery,Heyday Books,2001
 22890,Fire Emblem Awakening,Aida Macejkovic PhD,Fanfiction,Hodder & Stoughton,1908
 22946,The Wind's Twelve Quarters,Tracey Roob,Metafiction,Shoemaker & Hoard Publishers,2025
 22807,Grease: The Original Soundtrack from the Motion Picture,Marisha Stoltenberg,Science fiction,Bloodaxe Books,2017
-23118,Breakfast in America,"Lucio Brakus, Rev. Liberty Ward, Barton Hermann, Jewell Bartell",Realistic fiction,Cambridge University Press,1988
+23118,Breakfast in America,"Barton Hermann, Jewell Bartell, Lucio Brakus, Rev. Liberty Ward",Realistic fiction,Cambridge University Press,1988
 22553,Doom 3: BFG,Merlin Emard,Reference book,George Newnes,2023
 22602,This Lime Tree Bower,Sheryll Gottlieb,Western,Berkley Books,1894
 23051,Transistor,Naomi Jakubowski,Classic,Hamish Hamilton,1979
-23080,The Heart Is a Lonely Hunter,"Tinisha Pacocha II, Nadene Mertz, Jorge Roberts II",Tall tale,Lion Hudson,1998
+23080,The Heart Is a Lonely Hunter,"Jorge Roberts II, Nadene Mertz, Tinisha Pacocha II",Tall tale,Lion Hudson,1998
 22841,Some Buried Caesar,"Kraig Berge DC, Laverne Moore",Mystery,BBC Books,2010
-23178,An Evil Cradling,"Fredrick Roob, Savanna Grimes, Melonie Keebler",Short story,Palgrave Macmillan,2006
+23178,An Evil Cradling,"Fredrick Roob, Melonie Keebler, Savanna Grimes",Short story,Palgrave Macmillan,2006
 22727,A Beautiful Mind,Mauro Wisozk,Tall tale,Bella Books,2021
 22688,Million Dollar Baby,Naomi Jakubowski,Biography/Autobiography,Brill Publishers,1992
 22909,Raging Bull,Margarito Grimes,Fantasy,Carcanet Press,2012
@@ -680,7 +680,7 @@ id,title,author,genre,publisher,year
 22559,The Lord of the Rings: The Fellowship of the Ring,Alisa Nader,Fable,Manchester University Press,2009
 22764,An Instant In The Wind,Velia Mueller,Legend,Parachute Publishing,1980
 22550,21,Janeth Cartwright I,Short story,Orion Books,1988
-22911,Seven Samurai,"Gretchen Dicki, Gov. Linwood Wisozk",Historical fiction,University of Nebraska Press,1976
+22911,Seven Samurai,"Gov. Linwood Wisozk, Gretchen Dicki",Historical fiction,University of Nebraska Press,1976
 23197,PokĂ©mon Ruby,Whitney Schuppe,Essay,Harvest House,2025
 22533,Call of Duty: Black Ops II,Aida Macejkovic PhD,Crime/Detective,Lethe Press,2014
 22877,No Highway,Leigha Nikolaus,Science fiction,Open Court Publishing Company,2009
@@ -690,7 +690,7 @@ id,title,author,genre,publisher,year
 22571,The Lives of Others,Miss Orville Reilly,Metafiction,McFarland & Company,2024
 22745,WarioWare: Smooth Moves,Dudley Lebsack,Folklore,Del Rey Books,1994
 22853,Sgt. Pepper's Lonely Hearts Club Band,Cesar Lowe,Science fiction,Mandrake Press,1993
-23203,Jesting Pilate,"Lucien Turcotte, James Brown Esq.",Essay,Black Dog Publishing,1999
+23203,Jesting Pilate,"James Brown Esq., Lucien Turcotte",Essay,Black Dog Publishing,1999
 23055,Super Mario Galaxy 2,Mariah Toy,Speech,Felony & Mayhem Press,1978
 22780,A Glass of Blessings,Cindie Rice,Metafiction,,1976
 22517,Oldeuboi,Miss Orville Reilly,Historical fiction,Mark Batty Publisher,2008
@@ -699,7 +699,7 @@ id,title,author,genre,publisher,year
 22993,By Grand Central Station I Sat Down and Wept,Jarrod Corkery,Essay,Dedalus Books,2012
 22879,Can't Slow Down,Rafael Ward CPA,Fiction in verse,St. Martin's Press,2012
 22549,The Moving Finger,"Clay Mohr, Donald Dibbert II",Speech,Breslov Research Institute,1996
-23015,2001: A Space Odyssey,"Miss Marion Lebsack, Elvis Wisozk",Mythopoeia,Heyday Books,1981
+23015,2001: A Space Odyssey,"Elvis Wisozk, Miss Marion Lebsack",Mythopoeia,Heyday Books,1981
 22709,Once Upon a Time in the West,Arletha Carter,Classic,Earthscan,2003
 23019,Myst,Prof. Winston Brown,Mythology,Harvest House,2012
 22591,The Witcher,"Barrett Mills, Stanford Auer DVM",Reference book,Schocken Books,2004
@@ -725,13 +725,13 @@ id,title,author,genre,publisher,year
 22491,The Torment of Others,"Arlean Gutkowski, Val Towne",Mythology,Ian Allan Publishing,1989
 22569,Unweaving the Rainbow,Emerson Lakin,Crime/Detective,Open University Press,2026
 22639,The Legend of Zelda: Twilight Princess,Tressa Weimann,Fanfiction,Macmillan Publishers,1999
-23001,Civilization III,"Miss Lorina Kertzmann, Darron Ernser",Biography/Autobiography,HMSO,2009
+23001,Civilization III,"Darron Ernser, Miss Lorina Kertzmann",Biography/Autobiography,HMSO,2009
 22751,Mr Standfast,Rodolfo Dietrich,Comic/Graphic Novel,Reed Publishing,2025
 22776,Halo 3: ODST,Alfredo Frami,Textbook,Zed Books,2001
 22632,Arms and the Man,Peg Rutherford,Classic,David & Charles,1987
 22910,Scarface,Dr. Jung Hermann,Historical fiction,Manning Publications,1991
 23200,Frequent Hearses,Msgr. Kris Satterfield,Fantasy,Horizon Scientific Press,1995
-22580,PokĂ©mon HeartGold,"Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin, Claud Glover, The Hon. Carleen Schinner",Fantasy,Simon & Schuster,1995
+22580,PokĂ©mon HeartGold,"Claud Glover, Lance Mohr Sr., Marcia Watsica CPA, Rev. Marlin Strosin, The Hon. Carleen Schinner",Fantasy,Simon & Schuster,1995
 22999,The Intouchables,Prof. Kelly Altenwerth,Fiction narrative,Parachute Publishing,
 23035,There Will Be Blood,Deja Moen,Tall tale,Faber and Faber,1996
 22779,Mass Effect,Amb. Jamal Hettinger,Textbook,Hackett Publishing Company,2023
