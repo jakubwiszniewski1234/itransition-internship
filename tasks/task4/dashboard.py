@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
-from datasets import loadDataset
-
+from datasets import loadDataset, getStores, getDirectories, CLEANED_DIRECTORIES, STORES
 
 sidebar = st.sidebar
-selected_store = sidebar.selectbox("Pick store to collect data from", ["STORE1", "STORE2", "STORE3", "STORE4", "STORE5"])
+selected_store = sidebar.selectbox("Pick store to collect data from", getStores())
+cleaned_data_store_paths = getDirectories()
 
-books = loadDataset("books.csv", f"cleaned_data/{selected_store}/")
-orders = loadDataset("orders.csv", f"cleaned_data/{selected_store}/")
-users = loadDataset("users.csv", f"cleaned_data/{selected_store}/")
+books = loadDataset("books.csv", cleaned_data_store_paths[int(selected_store[-1]) - 1])
+orders = loadDataset("orders.csv", cleaned_data_store_paths[int(selected_store[-1]) - 1])
+users = loadDataset("users.csv", cleaned_data_store_paths[int(selected_store[-1]) - 1])
 
 st.write(f"# {selected_store}")
 
@@ -64,20 +64,20 @@ from networkx.utils.union_find import UnionFind
 
 unique_users_metric = unique_users_container.metric("Unique users", "...")
 
-all_unique_users = users["master_id"].unique().tolist()
+all_unique_users = users["original_id"].unique().tolist()
 unique_users_metric.metric("Unique users", len(all_unique_users))
 
 top_customers = orders[["user_id", "paid_price"]].groupby("user_id", as_index=False).sum().sort_values("paid_price", ascending=False)
 
-prices = {master_id: 0 for master_id in all_unique_users}
-master_customers = top_customers[["user_id", "paid_price"]].merge(right=users[["id", "master_id"]], how="inner", left_on="user_id", right_on="id")
-top_unique_customers = master_customers[["master_id", "paid_price"]].groupby("master_id").sum().sort_values(by="paid_price", ascending=False)
+prices = {original_id: 0 for original_id in all_unique_users}
+master_customers = top_customers[["user_id", "paid_price"]].merge(right=users[["id", "original_id"]], how="inner", left_on="user_id", right_on="id")
+top_unique_customers = master_customers[["original_id", "paid_price"]].groupby("original_id").sum().sort_values(by="paid_price", ascending=False)
 
 best_buyer_container.write("Top customer (all encounters):")
 best_buyer_container.write(top_unique_customers.head(1))
 
 best_buyer_container.write("All occurences of user:")
-best_buyer_container.write(users[users["master_id"] == top_unique_customers.head(1).index[0]][users.columns[:-1]].set_index("id"))
+best_buyer_container.write(users[users["original_id"] == top_unique_customers.head(1).index[0]][users.columns[:-1]].set_index("id"))
 
 
 bottom = st.bottom
@@ -85,4 +85,4 @@ chat_open_button = sidebar.button("Ask about anything")
 
 from ai_chat import show_chat
 if chat_open_button:
-    show_chat()
+    show_chat(selected_store)
