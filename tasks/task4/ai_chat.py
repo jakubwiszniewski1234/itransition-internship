@@ -18,7 +18,7 @@ def establish_connection():
 def create_database(STORE:str):
     connection = establish_connection()
     for dataset in loadAllDatasets(STORE):
-        dataset.to_sql(dataset.df_name, connection, if_exists="replace", index=False)
+        dataset.to_sql(dataset.df_name, connection, if_exists="replace")
     connection.execute("PRAGMA query_only = ON")
     return connection
 
@@ -77,67 +77,49 @@ def setup():
             st.error(f"Could not load datasets: {error}")
             return
 
-def draw_messages():
-    for message in st.session_state.ai_chat_messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-def init_groq():
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key: return Groq()
-    return Groq(api_key = api_key)
-
 @st.dialog("AI Chat", width = "large", position = "right", on_dismiss = reset_chat)
 def show_chat(STORE:str):
     st.session_state.store = STORE
     setup()
-    draw_messages()
 
     prompt = st.chat_input("Ask about books, orders or users")
+    if not prompt:
+        return
+
+    for message in st.session_state.ai_chat_messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    
+
     st.session_state.ai_chat_messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-    MESSAGES = get_messages()
-
-    client = init_groq()
-    with st.chat_message("assistant"):
-        response = client.chat.completions.create(
-            model = "openai/gpt-oss-120b",
-            messages = MESSAGES,
-            tools = TOOLS,
-            tool_choice = "auto"
+    MESSAGES = [
+    {
+        "role": "system",
+        "content": (
+            "Answer questions using the books, orders and users datasets. "
+            "Use execute_sql_query when data is needed. "
+            "Infer table and column names from SQL errors when necessary. "
+            "Never invent query results. "
+            "Only request read-only SELECT queries."
+            "Do NOT explain your thought process."
+            f"Datasets are from a store named {STORE}"
+            f"\nSchema info for datasets: {SCHEMA_INFO}"
         )
+    },
+    *st.session_state.ai_chat_messages
+]
 
-        assistant_message = response.choices[0].message
-
-        while assistant_message.tool_calls:
-            MESSAGES.append({
-                "role": "assistant",
-                "content": assistant_message.content or "",
-                "tool_calls": [
-                    {
-                        "id": call.id,
-                        "type": "function",
-                        "function": {
-                            "name": call.function.name,
-                            "arguments": call.function.arguments
-                        }
-                    } for call in assistant_message.tool_calls
-                ]
-            })
-
-            for call in assistant_message.tool_calls:
-                if call.function.name == "execute_sql_query":
-                    arguments = json.loads(call.function.arguments)
-                    result = execute_sql_query(st.session_state.ai_chat_db, arguments.get("query", ""))
-                else:
-                    result = {"error": "Unknown tool."}
-
-                MESSAGES.append({
-                    "role": "tool",
-                    "tool_call_id": call.id,
-                    "content": json.dumps(result, default=str)
-                })
-
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        st.error("GROQ_API_KEY is not configured.")
+        return
+    try:
+        client = Groq(api_key = api_key)
+        with st.chat_message("assistant"):
             response = client.chat.completions.create(
                 model = "openai/gpt-oss-120b",
                 messages = MESSAGES,
@@ -147,26 +129,49 @@ def show_chat(STORE:str):
 
             assistant_message = response.choices[0].message
 
-        answer = assistant_message.content or "I couldn't generate a response."
-        st.markdown(answer)
-        st.session_state.ai_chat_messages.append({
-            "role": "assistant",
-            "content": answer
-        })
+            while assistant_message.tool_calls:
+                MESSAGES.append({
+                    "role": "assistant",
+                    "content": assistant_message.content or "",
+                    "tool_calls": [
+                        {
+                            "id": call.id,
+                            "type": "function",
+                            "function": {
+                                "name": call.function.name,
+                                "arguments": call.function.arguments
+                            }
+                        } for call in assistant_message.tool_calls
+                    ]
+                })
 
-def get_messages():
-    return [
-        {
-            "role": "system",
-            "content": (
-                "Answer questions using the books, orders and users datasets. "
-                "Use execute_sql_query when data is needed. "
-                "Infer table and column names from SQL errors when necessary. "
-                "Never invent query results. "
-                "Only request read-only SELECT queries."
-                "Do NOT explain your thought process."
-                f"\nSchema info for datasets: {SCHEMA_INFO}"
-            )
-        },
-        *st.session_state.ai_chat_messages
-    ]
+                for call in assistant_message.tool_calls:
+                    if call.function.name == "execute_sql_query":
+                        arguments = json.loads(call.function.arguments)
+                        result = execute_sql_query(st.session_state.ai_chat_db, arguments.get("query", ""))
+                    else:
+                        result = {"error": "Unknown tool."}
+
+                    MESSAGES.append({
+                        "role": "tool",
+                        "tool_call_id": call.id,
+                        "content": json.dumps(result, default=str)
+                    })
+
+                response = client.chat.completions.create(
+                    model = "openai/gpt-oss-120b",
+                    messages = MESSAGES,
+                    tools = TOOLS,
+                    tool_choice = "auto"
+                )
+
+                assistant_message = response.choices[0].message
+
+            answer = assistant_message.content or "I couldn't generate a response."
+            st.markdown(answer)
+            st.session_state.ai_chat_messages.append({
+                "role": "assistant",
+                "content": answer
+            })
+    except Exception as error:
+        st.error(f"Chat request failed: {error}")
