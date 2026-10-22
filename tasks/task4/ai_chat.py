@@ -72,7 +72,7 @@ def setup():
         st.session_state.ai_chat_messages = []
     if "ai_chat_db" not in st.session_state or st.session_state.ai_chat_db is None:
         try:
-            st.session_state.ai_chat_db = create_database(st.session_state.storeRE)
+            st.session_state.ai_chat_db = create_database(st.session_state.store)
         except Exception as error:
             st.error(f"Could not load datasets: {error}")
             return
