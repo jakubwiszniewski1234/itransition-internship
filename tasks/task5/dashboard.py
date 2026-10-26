@@ -5,15 +5,22 @@ import os
 def get_google_link():
     sheet_id = os.getenv("GOOGLE_SHEETS_URL").split("/d/")[1].split("/")[0]
     return f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet=Data"
-    
+
 def load_dataset():
     return pd.read_csv(get_google_link(), usecols=range(8))
 
+def extract_columns(dataset:pd.DataFrame):
+    return dataset.columns.drop([f"Unnamed: {num}" for num in range(8)], errors="ignore").to_list()
+
 def extract_mines(dataset:pd.DataFrame):
-    return dataset.columns.drop([f"Unnamed: {num}" for num in range(8)], errors="ignore").to_list()[1:]
+    return extract_columns(dataset)[1:]
+
+def filter_unnamed_mines(dataset:pd.DataFrame):
+    return dataset[extract_columns(dataset)]
 
 dataset = load_dataset()
 mines = extract_mines(dataset)
+dataset = filter_unnamed_mines(dataset).dropna()
 selected_mine = st.sidebar.selectbox("SHOW INFORMATION ABOUT", mines)
 
 def calculate_mean_daily_output(mine:str):
@@ -40,5 +47,17 @@ anomalies_container.markdown("Any outputs below $Q_1 - 1.5\\text{IQR}$ or above 
 
 from anomalies_detector import AnomaliesDetector
 
-detector = AnomaliesDetector(dataset[selected_mine])
+detector = AnomaliesDetector(dataset, selected_mine)
+anomalies_container.write(detector.find_anomalies(by="iqr"))
 
+anomalies_container.markdown("## z-score")
+anomalies_container.markdown("Any outputs outside the $(\\mu - 3\\sigma, \\mu + 3\\sigma)$ are considered anomalies")
+
+anomalies_container.write(detector.find_anomalies(by="zscore"))
+
+anomalies_container.markdown("## Distance from MA")
+anomalies_container.markdown("...")
+
+detector.ma_percentage = anomalies_container.slider("Distance percentage", 0.05, 1., step = 0.05)
+
+anomalies_container.write(detector.find_anomalies(by="ma"))
