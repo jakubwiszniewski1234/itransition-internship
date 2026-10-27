@@ -1,193 +1,133 @@
-import os
 import re
-from typing import Dict, List, Set, Tuple
-import psycopg2
-from psycopg2.extras import execute_values
+from typing import Dict, List, Set, Tuple, Callable
 from faker import Faker
+from db_utils import insert_data, get_db_connection
 
-def read_env(name:str):
-    return os.getenv(f"DB_{name.upper()}")
+def mask_digits(text: str) -> str:
+    return re.sub(r'\d', '#', text)
 
-def get_db_credentials():
-    credentials = ["host", "port", "name", "user", "password"]
-    return {cred: read_env(cred) for cred in credentials}
+def get_state(fake: Faker) -> str:
+    return fake.state() if hasattr(fake, 'state') else fake.administrative_unit()
 
-def get_db_connection():
-    return psycopg2.connect(**get_db_credentials())
+def generate_unique(generator_func: Callable, count: int) -> Set:
+    results = set()
+    while len(results) < count:
+        results.add(generator_func())
+    return results
+
+def gen_locales(locales_config: Dict[str, str]) -> List[Tuple]:
+    return [(loc, country) for loc, country in locales_config.items()]
+
+def gen_first_names(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        males = [(loc, name, 'M') for name in generate_unique(fake.first_name_male, rows // 2)]
+        females = [(loc, name, 'F') for name in generate_unique(fake.first_name_female, rows // 2)]
+        data.extend(males + females)
+    return data
+
+def gen_last_names(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        data.extend([(loc, name) for name in generate_unique(fake.last_name, rows)])
+    return data
+
+def gen_titles(fakers: Dict[str, Faker], count: int = 20) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        males = [(loc, prefix, 'M') for prefix in generate_unique(fake.prefix_male, count)]
+        females = [(loc, prefix, 'F') for prefix in generate_unique(fake.prefix_female, count)]
+        data.extend(males + females)
+    return data
+
+def gen_streets(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        data.extend([(loc, street) for street in generate_unique(fake.street_name, rows)])
+    return data
+
+def gen_cities(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        unique_cities = set()
+        while len(unique_cities) < (rows // 2):
+            unique_cities.add((loc, fake.city(), get_state(fake), mask_digits(fake.postcode())))
+        data.extend(list(unique_cities))
+    return data
+
+def gen_email_domains(fakers: Dict[str, Faker], count: int = 50) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        data.extend([(loc, domain) for domain in generate_unique(fake.free_email_domain, count)])
+    return data
+
+def gen_phone_formats(fakers: Dict[str, Faker], count: int = 200) -> List[Tuple]:
+    data = []
+    for loc, fake in fakers.items():
+        formats = set()
+        while len(formats) < count:
+            formats.add((loc, mask_digits(fake.phone_number())))
+        data.extend(list(formats))
+    return data
+
+def get_discrete_attributes(locales: List[str]) -> Tuple[List[Tuple], List[Tuple]]:
+    discrete_data = {
+        'en_US': {
+            'eye': ['Blue', 'Brown', 'Green', 'Hazel', 'Gray', 'Amber'],
+            'hair': ['Black', 'Brown', 'Blonde', 'Red', 'Gray', 'White']
+        },
+        'pl_PL': {
+            'eye': ['Niebieski', 'Brązowy', 'Zielony', 'Czarny', 'Szary', 'Piwny'],
+            'hair': ['Czarny', 'Brązowy', 'Blond', 'Rudy', 'Szary', 'Biały']
+        }
+    }
+    eye_data, hair_data = [], []
+    for loc in locales:
+        dict_loc = loc if loc in discrete_data else 'en_US'
+        eye_data.extend([(loc, color) for color in discrete_data[dict_loc]['eye']])
+        hair_data.extend([(loc, color) for color in discrete_data[dict_loc]['hair']])
+    return eye_data, hair_data
 
 class LookupFiller:
-    DEFAULT_LOCALE = "en_US"
-
     def __init__(self, connection, locales_config: Dict[str, str], rows: int = 5000):
         self.connection = connection
         self.locales_config = locales_config
         self.rows = rows
         self.fakers = {locale: Faker(locale) for locale in locales_config.keys()}
 
-        self.discrete_data = {
-            'en_US': {
-                'eye_colors': ['Blue', 'Brown', 'Green', 'Hazel', 'Gray', 'Amber'],
-                'hair_colors': ['Black', 'Brown', 'Blonde', 'Red', 'Gray', 'White']
-            },
-            'pl_PL': {
-                'eye_colors': ['Niebieski', 'Brązowy', 'Zielony', 'Czarny', 'Szary', 'Piwny'],
-                'hair_colors': ['Czarny', 'Brązowy', 'Blond', 'Rudy', 'Szary', 'Biały']
-            }
-        }
+    def populate_lookups(self):
+        tasks = [
+            ("locales", "locale_code, country_name", gen_locales(self.locales_config)),
+            ("lookup_email_domains", "locale_code, domain_name", gen_email_domains(self.fakers)),
+            ("lookup_titles", "locale_code, title_text, gender", gen_titles(self.fakers)),
+            ("lookup_phone_formats", "locale_code, format_pattern", gen_phone_formats(self.fakers)),
+            ("lookup_first_names", "locale_code, first_name, gender", gen_first_names(self.fakers, self.rows)),
+            ("lookup_last_names", "locale_code, last_name", gen_last_names(self.fakers, self.rows)),
+            ("lookup_streets", "locale_code, street_name", gen_streets(self.fakers, self.rows)),
+            ("lookup_cities", "locale_code, city_name, state_or_region, postal_code_pattern", gen_cities(self.fakers, self.rows)),
+        ]
 
-    def _insert(self, query: str, data: List[Tuple]):
-        if not data:
-            return
-        with self.connection.cursor() as cursor:
-            execute_values(cursor, query, data)
-        self.connection.commit()
+        for table, columns, data in tasks:
+            conflict = " ON CONFLICT DO NOTHING" if table == "locales" else ""
+            insert_data(self.connection, f"INSERT INTO {table} ({columns}) VALUES %s{conflict};", data)
 
-    def fill_locales(self):
-        data = [(loc, country) for loc, country in self.locales_config.items()]
-        query = "INSERT INTO locales (locale_code, country_name) VALUES %s ON CONFLICT DO NOTHING;"
-        self._insert(query, data)
-
-    def fill_first_names(self):
-        print("\n--- Populating lookup_first_names ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            unique_names = set()
-            # Generate Male names
-            while len(unique_names) < (self.rows // 2):
-                unique_names.add((loc, fake.first_name_male(), 'M'))
-            # Generate Female names
-            female_start_len = len(unique_names)
-            while len(unique_names) < female_start_len + (self.rows // 2):
-                unique_names.add((loc, fake.first_name_female(), 'F'))
-            data.extend(list(unique_names))
-            
-        query = "INSERT INTO lookup_first_names (locale_code, first_name, gender) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_last_names(self):
-        print("\n--- Populating lookup_last_names ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            unique_names = set()
-            while len(unique_names) < self.rows:
-                unique_names.add((loc, fake.last_name()))
-            data.extend(list(unique_names))
-            
-        query = "INSERT INTO lookup_last_names (locale_code, last_name) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_titles(self):
-        print("\n--- Populating lookup_titles ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            titles = set()
-            for _ in range(20):
-                titles.add((loc, fake.prefix_male(), 'M'))
-                titles.add((loc, fake.prefix_female(), 'F'))
-            data.extend(list(titles))
-            
-        query = "INSERT INTO lookup_titles (locale_code, title_text, gender) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_streets(self):
-        print("\n--- Populating lookup_streets ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            streets = set()
-            while len(streets) < self.rows:
-                streets.add((loc, fake.street_name()))
-            data.extend(list(streets))
-            
-        query = "INSERT INTO lookup_streets (locale_code, street_name) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_cities(self):
-        print("\n--- Populating lookup_cities ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            cities = set()
-            while len(cities) < (self.rows // 2): # Slightly fewer cities than names
-                state = fake.state() if hasattr(fake, 'state') else fake.administrative_unit()
-                # Create a postal pattern by replacing digits with '#'
-                postcode = fake.postcode()
-                pattern = re.sub(r'\d', '#', postcode)
-                
-                cities.add((loc, fake.city(), state, pattern))
-            data.extend(list(cities))
-            
-        query = "INSERT INTO lookup_cities (locale_code, city_name, state_or_region, postal_code_pattern) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_email_domains(self):
-        print("\n--- Populating lookup_email_domains ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            domains = set()
-            for _ in range(50):
-                domains.add((loc, fake.free_email_domain()))
-            data.extend(list(domains))
-            
-        query = "INSERT INTO lookup_email_domains (locale_code, domain_name) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_phone_formats(self):
-        print("\n--- Populating lookup_phone_formats ---")
-        data = []
-        for loc, fake in self.fakers.items():
-            formats = set()
-            for _ in range(200):
-                # Replace all numbers in a fake phone number with '#' to generate the pattern
-                phone = fake.phone_number()
-                pattern = re.sub(r'\d', '#', phone)
-                formats.add((loc, pattern))
-            data.extend(list(formats))
-            
-        query = "INSERT INTO lookup_phone_formats (locale_code, format_pattern) VALUES %s;"
-        self._insert(query, data)
-
-    def fill_discrete_attributes(self):
-        print("\n--- Populating eye and hair colors ---")
-        eye_data = []
-        hair_data = []
-        
-        for loc in self.locales_config.keys():
-            dict_loc = loc if loc in self.discrete_data else LookupFiller.DEFAULT_LOCALE
-
-            for color in self.discrete_data[dict_loc]['eye_colors']:
-                eye_data.append((loc, color))
-            for color in self.discrete_data[dict_loc]['hair_colors']:
-                hair_data.append((loc, color))
-                
-        self._insert("INSERT INTO lookup_eye_colors (locale_code, color_name) VALUES %s;", eye_data)
-        self._insert("INSERT INTO lookup_hair_colors (locale_code, color_name) VALUES %s;", hair_data)
-
-    def fill(self):
-        try:
-            self.fill_locales()
-            self.fill_discrete_attributes()
-            self.fill_email_domains()
-            self.fill_titles()
-            self.fill_phone_formats()
-            self.fill_first_names()
-            self.fill_last_names()
-            self.fill_streets()
-            self.fill_cities()
-        except Exception as e:
-            self.connection.rollback()
+        eye_data, hair_data = get_discrete_attributes(list(self.locales_config.keys()))
+        insert_data(self.connection, "INSERT INTO lookup_eye_colors (locale_code, color_name) VALUES %s;", eye_data)
+        insert_data(self.connection, "INSERT INTO lookup_hair_colors (locale_code, color_name) VALUES %s;", hair_data)
 
 if __name__ == "__main__":
-    # Configuration
     SUPPORTED_LOCALES = {
         'en_US': 'United States',
         'pl_PL': 'Poland'
     }
     
-    # 1. Connect
     connection = get_db_connection()
-    
     try:
-        filler = LookupFiller(connection, locales_config=SUPPORTED_LOCALES, rows=2000)
-        filler.fill()
+        filler = LookupFiller(connection, locales_config=SUPPORTED_LOCALES, rows=5)
+        filler.populate_lookups()
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        connection.rollback()
     finally:
         if connection:
             connection.close()
