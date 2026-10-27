@@ -1,22 +1,20 @@
 import pandas as pd
 import numpy as np
+import altair as alt
 import streamlit as st
 from anomalies_detector import AnomaliesDetector
 
 DEFAULT_TYPE = "line"
 
 class SummaryChart:
+    trend_degree = 1
+
     def __init__(self, dataset:pd.DataFrame, mine:str):
-        if mine == "Total":
-            self.dataset = (
-                dataset.loc[:, dataset.columns != "Total"]
-                .melt(id_vars="Date", var_name="Mine", value_name="Total")
-            )
-        else:
-            self.dataset = dataset[["Date", mine]].copy()
-            self.dataset["Mine"] = mine
+        dataset["Date"] = pd.to_datetime(dataset["Date"], format="%d/%m/%Y")
+        dataset = dataset.sort_values("Date").reset_index(drop = True)
+        self.dataset = dataset
         self.mine = mine
-        self.trend = 1
+        self.dataset["Trendline"] = self.trend()
         self.detector = AnomaliesDetector(dataset, self.mine)
         self.anomalies = self.detector.find_anomalies(by = "all")
         self.type = DEFAULT_TYPE
@@ -30,6 +28,9 @@ class SummaryChart:
     def _set_stacked(self):
         pass
 
+    def set_anomalies_detector(self, detector):
+        self.detector = detector
+
     def set_type(self, type:str):
         if hasattr(self, f"_set_{type}"):
             self.type = type
@@ -37,23 +38,74 @@ class SummaryChart:
         raise ValueError(f"Couldn't set chart type to \"{type}\".")
 
     def set_trend(self, poly_degree:int):
-        self.trend = poly_degree
+        self.trend_degree = poly_degree
+
+    def trend(self):
+        daily = self.dataset.groupby("Date", as_index=False)[self.mine].sum()
+        coeffs = np.polyfit(np.arange(len(daily)), daily[self.mine], deg=self.trend_degree)
+        daily["Trendline"] = np.polyval(coeffs, np.arange(len(daily)))
+        trend_map = daily.set_index("Date")["Trendline"]
+        return self.dataset["Date"].map(trend_map)
+    
+    def trend_line(self):
+        self.dataset["Trendline"] = self.trend()
+        trend_line = (
+            alt.Chart(self.dataset)
+            .mark_line(strokeDash=[6, 4], size=2)
+            .encode(x="Date:T", y="Trendline:Q")
+        )
+
+        return trend_line
 
     def _draw_stacked(self):
-        return st.bar_chart(self.dataset, x = "Date", y = self.mine, stack = True, color = "Mine")
+        if self.mine == "Total":
+           dataset = self.dataset.loc[:, ~self.dataset.columns.isin(["Total", "Trendline"]) ].melt(id_vars="Date", var_name="Mine", value_name="Total")
+        else: dataset = self.dataset
+        chart = (
+            alt.Chart(dataset).mark_bar()
+            .encode(x="Date:T", y=alt.Y(f"{self.mine}:Q", title=self.mine), color="Mine:N") 
+        )
+
+        return st.altair_chart((chart + self.trend_line() + self.anomaly_points()).resolve_scale(color="independent"))
+
 
     def _draw_bar(self):
-        return st.bar_chart(self.dataset, x = "Date", y = self.mine, stack = False, color = "Mine")
+        chart = (
+            alt.Chart(self.dataset).mark_bar()
+            .encode(x="Date:T", y=alt.Y(f"{self.mine}:Q", title=self.mine), color="Mine:N") 
+        )
+
+        return st.altair_chart((chart + self.trend_line() + self.anomaly_points()).resolve_scale(color="independent"))
+
+    def anomaly_points(self):
+        return alt.Chart(self.anomalies).mark_point(
+                size=120,
+                filled=True,
+                stroke="black",
+                strokeWidth=1.5,
+            ).encode(
+                x="Date:T",
+                y=alt.Y(f"{self.mine}:Q"),
+                color=alt.Color(
+                    "Type:N",
+                    scale=alt.Scale(
+                        domain=["spike", "drop"],
+                        range=["#dc2626", "#eab308"],
+                    ),
+                    legend=alt.Legend(title="Anomaly Type"),
+                ),
+            )
 
     def _draw_line(self):
-        return st.line_chart(self.dataset, x = "Date", y = self.mine, color = "Mine")
+        chart = (
+            alt.Chart(self.dataset).mark_line()
+            .encode(x="Date:T", y=alt.Y(f"{self.mine}:Q", title=self.mine), color="Mine:N")
+        )
+
+        return st.altair_chart((chart + self.trend_line() + self.anomaly_points()).resolve_scale(color="independent"))
 
     def draw_plot(self):
         return getattr(self, f"_draw_{self.type}")()
-
-    def add_trend(self):
-        trend_coeffs = np.polyfit(self.trend)
         
     def draw(self):
-        plot = self.draw_plot()
-        plot.draw_trend()
+        return self.draw_plot()

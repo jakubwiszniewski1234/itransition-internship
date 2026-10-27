@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
-from OUTLIERS import smirnov_grubbs as grubbs
+try:
+    from outliers import smirnov_grubbs as grubbs
+except:
+    from OUTLIERS import smirnov_grubbs as grubbs
 
 SPIKE_TAG = "spike"
 DROP_TAG = "drop"
@@ -9,20 +12,20 @@ class AnomaliesDetector:
     iqr_factor = 1.5
     zscore_threshold = 2
     ma_window = 7
-    ma_percentage = 0.25
+    ma_percentage = 0.5
     grubbs_alpha = 0.05
 
     def __init__(self, dataset:pd.DataFrame, mine:str):
         self.dataset = dataset[["Date", mine]].copy()
         self.mine = mine
 
-    def anomaly_type(output:float, mean:float):
-        if output > mean: return SPIKE_TAG
+    def anomaly_type(output:float, threshold:float):
+        if output > threshold: return SPIKE_TAG
         return DROP_TAG
 
     def _assign_anomaly_types(self, dataset:pd.DataFrame):
-        mean = dataset[self.mine].mean()
-        dataset["Type"] = dataset[self.mine].apply(lambda o: AnomaliesDetector.anomaly_type(o, mean))
+        threshold = dataset[self.mine].mean()
+        dataset["Type"] = np.where(dataset[self.mine] > threshold, SPIKE_TAG, DROP_TAG)
         return dataset
 
     def _anomalies_by_iqr(self):
@@ -45,9 +48,9 @@ class AnomaliesDetector:
 
     def _anomalies_by_all(self):
         dates = pd.concat(getattr(self, f"_anomalies_by_{by}")()["Date"] for by in ["iqr", "zscore", "ma", "grubbs"])
-        return self._assign_anomaly_types(self.dataset[self.dataset["Date"].isin(dates)])
+        return self.dataset[self.dataset["Date"].isin(dates)]
 
     def find_anomalies(self, by:str):
         if hasattr(self, f"_anomalies_by_{by.lower()}"):
-            return getattr(self, f"_anomalies_by_{by.lower()}")()
+            return self._assign_anomaly_types(getattr(self, f"_anomalies_by_{by.lower()}")())
         raise ValueError(f"Unrecognized method: couldn't find anomalies by {by}.")
