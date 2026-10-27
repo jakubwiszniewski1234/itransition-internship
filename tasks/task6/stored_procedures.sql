@@ -1,0 +1,6 @@
+CREATE PROCEDURE generate_users @seed INT DEFAULT 2
+AS
+BEGIN
+
+
+END

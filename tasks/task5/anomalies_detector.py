@@ -31,24 +31,30 @@ class AnomaliesDetector:
     def _anomalies_by_iqr(self):
         q1, q3 = np.quantile(self.dataset[self.mine], (.25, .75))
         iqr = q3 - q1
-        return self.dataset[(self.dataset[self.mine] < q1 - self.iqr_factor*iqr) | (self.dataset[self.mine] > q3 + self.iqr_factor*iqr)]
-
+        outliers = self.dataset[(self.dataset[self.mine] < q1 - self.iqr_factor*iqr) | (self.dataset[self.mine] > q3 + self.iqr_factor*iqr)]
+        return self._assign_method(outliers, "iqr rule")
+    
     def _anomalies_by_zscore(self):
         mean, sd = np.mean(self.dataset[self.mine]), np.std(self.dataset[self.mine])
-        return self.dataset[(abs((self.dataset[self.mine] - mean)/sd) > self.zscore_threshold)]
+        outliers = self.dataset[(abs((self.dataset[self.mine] - mean)/sd) > self.zscore_threshold)]
+        return self._assign_method(outliers, "zscore")
 
     def _anomalies_by_ma(self):
         dataset = self.dataset.copy()
         dataset["ma"] = dataset[self.mine].rolling(self.ma_window, min_periods=1).mean()
-        return dataset[(dataset[self.mine] - dataset["ma"]).abs() / dataset["ma"].abs().replace(0, pd.NA) > self.ma_percentage][["Date", self.mine]]
+        outliers_df = dataset[(dataset[self.mine] - dataset["ma"]).abs() / dataset["ma"].abs().replace(0, pd.NA) > self.ma_percentage][["Date", self.mine]]
+        return self._assign_method(outliers_df, "moving average")
 
     def _anomalies_by_grubbs(self):
         outliers = grubbs.two_sided_test_indices(self.dataset[self.mine].to_numpy(), self.grubbs_alpha)
-        return self.dataset.loc[outliers]
+        return self._assign_method(self.dataset.loc[outliers], "grubbs test")
+
+    def _assign_method(self, dataset, method:str):
+        return pd.DataFrame(dataset).assign(Method=method)
 
     def _anomalies_by_all(self):
-        dates = pd.concat(getattr(self, f"_anomalies_by_{by}")()["Date"] for by in ["iqr", "zscore", "ma", "grubbs"])
-        return self.dataset[self.dataset["Date"].isin(dates)]
+        dates = pd.concat(getattr(self, f"_anomalies_by_{by}")() for by in ["iqr", "zscore", "ma", "grubbs"])
+        return self.dataset[self.dataset["Date"].isin(dates["Date"])]
 
     def find_anomalies(self, by:str):
         if hasattr(self, f"_anomalies_by_{by.lower()}"):

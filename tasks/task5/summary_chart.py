@@ -9,14 +9,12 @@ DEFAULT_TYPE = "line"
 class SummaryChart:
     trend_degree = 1
 
-    def __init__(self, dataset:pd.DataFrame, mine:str):
-        dataset["Date"] = pd.to_datetime(dataset["Date"], format="%d/%m/%Y")
-        dataset = dataset.sort_values("Date").reset_index(drop = True)
-        self.dataset = dataset
+    def __init__(self, dataset:pd.DataFrame, mine:str, detector:AnomaliesDetector = None, anomalies:pd.DataFrame = None):
+        self.dataset = dataset.copy().sort_values("Date").reset_index(drop = True)
         self.mine = mine
         self.dataset["Trendline"] = self.trend()
-        self.detector = AnomaliesDetector(dataset, self.mine)
-        self.anomalies = self.detector.find_anomalies(by = "all")
+        self.detector = (detector if detector is not None else AnomaliesDetector(dataset, self.mine))
+        self.anomalies = (anomalies if anomalies is not None else self.detector.find_anomalies(by="all"))
         self.type = DEFAULT_TYPE
     
     def _set_line(self):
