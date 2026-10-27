@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import os
+import matplotlib.pyplot as plt
 
 def get_google_link():
     sheet_id = os.getenv("GOOGLE_SHEETS_URL").split("/d/")[1].split("/")[0]
@@ -18,46 +20,80 @@ def extract_mines(dataset:pd.DataFrame):
 def filter_unnamed_mines(dataset:pd.DataFrame):
     return dataset[extract_columns(dataset)]
 
+def add_total_column(dataset:pd.DataFrame):
+    dataset["Total"] = dataset[extract_mines(dataset)].sum(axis = 1)
+    return dataset
+
 dataset = load_dataset()
 mines = extract_mines(dataset)
 dataset = filter_unnamed_mines(dataset).dropna()
-selected_mine = st.sidebar.selectbox("SHOW INFORMATION ABOUT", mines)
+dataset = add_total_column(dataset)
+selected_mine = st.sidebar.selectbox("SHOW INFORMATION ABOUT", ["Total"] + mines)
+
+st.bar_chart(dataset, x = "Date", y = selected_mine, sort=False)
+
+def rounded(number:float):
+    return round(number, 2)
 
 def calculate_mean_daily_output(mine:str):
-    return dataset[mine].mean()
+    return rounded(dataset[mine].mean())
 
 def calculate_sd(mine:str):
-    return dataset[mine].std()
+    return rounded(dataset[mine].std())
 
 def calculate_median(mine:str):
-    return dataset[mine].median()
+    return rounded(dataset[mine].median())
 
 def calculate_iqr(mine:str):
-    return dataset[mine].quantile(.75) - dataset[mine].quantile(.25)
+    return rounded(dataset[mine].quantile(.75) - dataset[mine].quantile(.25))
 
-st.metric("Mean daily output", calculate_mean_daily_output(selected_mine))
-st.metric("Standard deviation", calculate_sd(selected_mine))
-st.metric("Median", calculate_median(selected_mine))
-st.metric("IQR", calculate_iqr(selected_mine))
+metrics = st.container(border = True, horizontal = True)
+
+metrics.metric("Mean daily output", calculate_mean_daily_output(selected_mine))
+metrics.metric("Standard deviation", calculate_sd(selected_mine))
+metrics.metric("Median", calculate_median(selected_mine))
+metrics.metric("IQR", calculate_iqr(selected_mine))
 
 anomalies_container = st.container(border=True)
 anomalies_container.markdown("# DETECTED ANOMALIES")
 anomalies_container.markdown("## IQR TEST")
-anomalies_container.markdown("Any outputs below $Q_1 - 1.5\\text{IQR}$ or above $Q_3 + 1.5\\text{IQR}$ are considered anomalies by the rule.")
+anomalies_container.markdown("Any outputs below $Q_1 - k\\times\\text{IQR}$ or above $Q_3 + k\\times\\text{IQR}$, where $k$ is a narrowing factor, are considered anomalies by the rule. By deafult rule definition, $k=1.5$.")
 
 from anomalies_detector import AnomaliesDetector
 
 detector = AnomaliesDetector(dataset, selected_mine)
-anomalies_container.write(detector.find_anomalies(by="iqr"))
+
+detector.iqr_factor = anomalies_container.slider("IQR Multiplication factor", .5, 3., step = 0.5, value=1.5)
+iqr_anomalies = detector.find_anomalies(by="iqr")
+anomalies_container.write(iqr_anomalies)
 
 anomalies_container.markdown("## z-score")
 anomalies_container.markdown("Any outputs outside the $(\\mu - 3\\sigma, \\mu + 3\\sigma)$ are considered anomalies")
-
-anomalies_container.write(detector.find_anomalies(by="zscore"))
+detector.zscore_threshold = anomalies_container.slider("$\\sigma$ threshold", 1., 3., step = 0.5, value=2.)
+zscore_anomalies = detector.find_anomalies(by="zscore")
+anomalies_container.write(zscore_anomalies)
 
 anomalies_container.markdown("## Distance from MA")
 anomalies_container.markdown("...")
+detector.ma_window = anomalies_container.selectbox("Moving Average window", [1, 3, 7, 14], index = 2)
+detector.ma_percentage = anomalies_container.slider("Distance percentage", 0.05, 1., step = 0.05, value = 0.6)
+ma_anomalies = detector.find_anomalies(by="ma")
+anomalies_container.write(ma_anomalies)
 
-detector.ma_percentage = anomalies_container.slider("Distance percentage", 0.05, 1., step = 0.05)
+anomalies_container.markdown("## Grubbs test")
+anomalies_container.markdown("...")
+detector.grubbs_alpha = anomalies_container.slider("Confidence level $\\alpha$", .05, 1., step = 0.05)
+grubbs_anomalies = detector.find_anomalies(by="grubbs")
+anomalies_container.write(grubbs_anomalies)
 
-anomalies_container.write(detector.find_anomalies(by="ma"))
+
+from summary_chart import SummaryChart
+summary_chart_container = st.container(border = True)
+
+summary_chart = SummaryChart(dataset, selected_mine)
+selected_chart_type = summary_chart_container.radio("Chart type", ["line", "bar", "stacked"], horizontal = True)
+summary_chart.set_type(selected_chart_type)
+
+
+
+summary_chart.draw()
