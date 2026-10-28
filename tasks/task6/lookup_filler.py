@@ -1,18 +1,20 @@
 import re
 from typing import Dict, List, Set, Tuple, Callable
 from faker import Faker
-from db_utils import insert_data, get_db_connection
+from db_utils import insert_data, get_db_connection, create_lookup_tables
 
 def mask_digits(text: str) -> str:
-    return re.sub(r'\d', '#', text)
+    return re.sub(r'\d', '#', text.replace(".", ""))
 
 def get_state(fake: Faker) -> str:
     return fake.state() if hasattr(fake, 'state') else fake.administrative_unit()
 
-def generate_unique(generator_func: Callable, count: int) -> Set:
+def generate_unique(generator_func: Callable, count: int, max_attempts: int = 5000) -> Set:
     results = set()
-    while len(results) < count:
+    attempts = 0
+    while len(results) < count and attempts < max_attempts:
         results.add(generator_func())
+        attempts += 1
     return results
 
 def gen_locales(locales_config: Dict[str, str]) -> List[Tuple]:
@@ -32,7 +34,7 @@ def gen_last_names(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
         data.extend([(loc, name) for name in generate_unique(fake.last_name, rows)])
     return data
 
-def gen_titles(fakers: Dict[str, Faker], count: int = 20) -> List[Tuple]:
+def gen_titles(fakers: Dict[str, Faker], count: int = 5) -> List[Tuple]:
     data = []
     for loc, fake in fakers.items():
         males = [(loc, prefix, 'M') for prefix in generate_unique(fake.prefix_male, count)]
@@ -55,13 +57,13 @@ def gen_cities(fakers: Dict[str, Faker], rows: int) -> List[Tuple]:
         data.extend(list(unique_cities))
     return data
 
-def gen_email_domains(fakers: Dict[str, Faker], count: int = 50) -> List[Tuple]:
+def gen_email_domains(fakers: Dict[str, Faker], count: int = 5) -> List[Tuple]:
     data = []
     for loc, fake in fakers.items():
         data.extend([(loc, domain) for domain in generate_unique(fake.free_email_domain, count)])
     return data
 
-def gen_phone_formats(fakers: Dict[str, Faker], count: int = 200) -> List[Tuple]:
+def gen_phone_formats(fakers: Dict[str, Faker], count: int = 2) -> List[Tuple]:
     data = []
     for loc, fake in fakers.items():
         formats = set()
@@ -122,8 +124,9 @@ if __name__ == "__main__":
     }
     
     connection = get_db_connection()
+    create_lookup_tables(connection)
     try:
-        filler = LookupFiller(connection, locales_config=SUPPORTED_LOCALES, rows=5)
+        filler = LookupFiller(connection, locales_config=SUPPORTED_LOCALES, rows=5000)
         filler.populate_lookups()
     except Exception as e:
         print(f"Error occurred: {e}")

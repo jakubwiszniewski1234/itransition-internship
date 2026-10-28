@@ -17,5 +17,14 @@ def insert_data(connection, query: str, data: List[Tuple]):
     if not data:
         return
     with connection.cursor() as cursor:
+
         execute_values(cursor, query, data)
     connection.commit()
+
+def execute_file(connection, file_path:str):
+    with open(file_path, "r") as f:
+        with connection.cursor() as cursor:
+            cursor.execute(f.read().strip())
+
+def create_lookup_tables(connection):
+    execute_file(connection, "create_lookup_tables.sql")
