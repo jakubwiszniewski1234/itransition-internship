@@ -26,7 +26,7 @@ def fetch_users(seed: int, locale: str, batch_index: int, batch_size: int) -> pd
     try:
         with conn.cursor() as cursor:
             cursor.execute(
-                f"SELECT {batch_size}*batch_index + row_index AS id, full_name, email, phone, address, eye_color, hair_color, latitude, longitude FROM generate_users_batch(%s, %s, %s, %s);",
+                f"SELECT {batch_size}*batch_index + row_index AS id, full_name, email, phone, address, height_cm, weight_kg, eye_color, hair_color, latitude, longitude FROM generate_users_batch(%s, %s, %s, %s);",
                 (seed, locale, batch_index, batch_size)
             )
             rows = cursor.fetchall()
