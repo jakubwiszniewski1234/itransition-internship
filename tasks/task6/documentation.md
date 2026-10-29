@@ -1,7 +1,9 @@
 # User Generation Documentation
 
-FUNCTION rng
+FUNCTION `rng`
+
 Generates and returns a pseudo-random double precision number between 0 and 1.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -13,8 +15,10 @@ This function acts as a seeded uniform random number generator, returning a valu
 
 ---
 
-PROCEDURE rnorm
+PROCEDURE `rnorm`
+
 Generates a random double precision number from normal distribution.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -29,8 +33,10 @@ This procedure uses the Box-Muller transform to generate normally distributed ra
 
 ---
 
-PROCEDURE generate_full_name
+PROCEDURE `generate_full_name`
+
 Generates a full name including optional titles and middle names.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -45,8 +51,10 @@ The procedure randomly picks elements from lookup first name, last name and titl
 
 ---
 
-PROCEDURE generate_address
+PROCEDURE `generate_address`
+
 Generates a localized physical address.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -62,8 +70,10 @@ The house number is randomly selected in the range $1$ to $999$ using a uniform 
 
 ---
 
-PROCEDURE generate_geolocation
+PROCEDURE `generate_geolocation`
+
 Generates geographic coordinates on a spherical globe.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -76,8 +86,10 @@ The procedure generates coordinates according to spherical area - longitude is c
 
 ---
 
-PROCEDURE generate_height
+PROCEDURE `generate_height`
+
 Generates a human height in centimeters.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -89,8 +101,10 @@ The procedure generates a randomly distributed number of mean ($\mu = 175$) and 
 
 ---
 
-PROCEDURE generate_weight
+PROCEDURE `generate_weight`
+
 Generates a realistic human body weight in kilograms.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -102,8 +116,10 @@ The procedure generates a randomly distributed number of mean ($\mu = 75$) and s
 
 ---
 
-PROCEDURE generate_eye_color
+PROCEDURE `generate_eye_color`
+
 Returns a random eye color from list.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -116,8 +132,10 @@ Randomly chooses an eye color from the `arr_eyes` array.
 
 ---
 
-PROCEDURE generate_hair_color
+PROCEDURE `generate_hair_color`
+
 Returns a random hair color from a list.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -130,8 +148,10 @@ Randomly chooses a hair color from the `arr_hair` array.
 
 ---
 
-PROCEDURE generate_physical_attributes
+PROCEDURE `generate_physical_attributes`
+
 Generates human physical attributes: height, weight, eye color, and hair color.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -148,8 +168,10 @@ The procedure is a wrapper for calling procedures and reaturning their results: 
 
 ---
 
-PROCEDURE generate_phone
+PROCEDURE `generate_phone`
+
 Generates a randomly formatted phone number.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -162,8 +184,10 @@ Randomly selects a phone format from the array, then loops over the characters a
 
 ---
 
-PROCEDURE generate_email
+PROCEDURE `generate_email`
+
 Generates an email address from the user's name.
+
 Params:
 - seed BIGINT: Set seed.
 - locale VARCHAR(10): The locale string.
@@ -177,12 +201,14 @@ The procedure uses the `full_name` to generate a user e-mail, adds a random inte
 
 ---
 
-FUNCTION generate_users_batch
+FUNCTION `generate_users_batch`
+
 Main function that generates a complete batch of users as a returned table.
+
 Params:
 - p_seed BIGINT: Set seed.
 - p_locale VARCHAR(10): The locale string (e.g. 'en_US').
 - p_batch_index INT: Current batch identifier.
 - p_batch_size INT DEFAULT 10: Size of one user generation batch.
 
-The function creates a temporary table `users` on the fly to hold the output. It queries the `lookup_*` tables and places them into array variables. It then iterates from $0$ to $(\text{p_batch_size} - 1)$, and in each iteration, it calls the generation procedures (`generate_full_name`, `generate_address`, etc.) to constructs a full row of fake user information, which is inserted into the temporary table. The function returns the generated dataset queried from the temporary table.
+The function creates a temporary table `users` to hold the output. It queries the `lookup_*` tables and places them into array variables. It then iterates from $0$ to $(\text{pbatchsize} - 1)$, and in each iteration, it calls the generation procedures (`generate_full_name`, `generate_address`, etc.) to constructs a full row of fake user information, which is inserted into the temporary table. The function returns the generated dataset queried from the temporary table.

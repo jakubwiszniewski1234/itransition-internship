@@ -54,7 +54,7 @@ def benchmark_user_generation(
             for i in range(iterations):
                 duration = measure_single_run(cursor, conn, seed, locale, i, batch_size)
                 times.append(duration)
-                print(f"{i + 1}/{iterations}: {duration:.4f}s")
+                # print(f"{i + 1}/{iterations}: {duration:.4f}s")
     finally:
         conn.close()
 
@@ -63,4 +63,6 @@ def benchmark_user_generation(
     return stats["avg"]
 
 if __name__ == "__main__":
-    benchmark_user_generation(iterations=10, batch_size=5000)
+    for batch_size in [100, 1000, 5000, 10000, 100000, 250000]:
+        print(f"\nMeasuring user generation for batch size of {batch_size}")
+        benchmark_user_generation(iterations=10, batch_size=batch_size)
