@@ -4,7 +4,10 @@ from faker import Faker
 from db_utils import insert_data, get_db_connection, create_lookup_tables
 
 def mask_digits(text: str) -> str:
+    if "+" in text:
+        return text[0:3] + re.sub(r'\d', '#', text[3:].replace(".", ""))
     return re.sub(r'\d', '#', text.replace(".", ""))
+    
 
 def get_state(fake: Faker) -> str:
     return fake.state() if hasattr(fake, 'state') else fake.administrative_unit()
@@ -63,12 +66,12 @@ def gen_email_domains(fakers: Dict[str, Faker], count: int = 5) -> List[Tuple]:
         data.extend([(loc, domain) for domain in generate_unique(fake.free_email_domain, count)])
     return data
 
-def gen_phone_formats(fakers: Dict[str, Faker], count: int = 2) -> List[Tuple]:
+def gen_phone_formats(fakers: Dict[str, Faker], count: int = 4) -> List[Tuple]:
     data = []
     for loc, fake in fakers.items():
         formats = set()
         while len(formats) < count:
-            formats.add((loc, mask_digits(fake.phone_number())))
+            formats.add((loc, mask_digits(fake.phone_number()).split("x")[0]))
         data.extend(list(formats))
     return data
 
